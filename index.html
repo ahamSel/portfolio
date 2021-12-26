@@ -1,67 +1,152 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./style.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./style.css" />
     <title>ahames</title>
-</head>
-<body>
+  </head>
+  <body>
     <h1>whoami</h1>
-    <ul>
-        <li>Ahmed Amine Esselmouni
-            <ul>
-                <li>19 years old</li>
-                <li>From Morocco</li>
-                <li>Living in St. John's, Canada</li>
-            </ul>
+    <div class="tree">
+      <ul>
+        <li>
+          Ahmed Amine Es-selmouni
+          <ul>
+            <li>
+              <ul>
+                <li>
+                  <span tooltip="" class="real_age">19</span>
+                  years old
+                </li><!--
+                --><li>From Morocco</li><!--
+                --><li>Living in St. John's, Canada</li>
+              </ul>
+            </li><!--
+            --><li>
+              Current undergraduate at
+              <a href="https://mun.ca/" target="_blank"
+                >MUN</a
+              >
+              <ul>
+                <li>Computer Science major</li>
+              </ul>
+            </li>
+          </ul>
         </li>
-        <li>Current undergradute student at <a href="https://mun.ca/" target="_blank">Memorial University of Newfoundland</a>
-            <ul>
-                <li>First year Computer Science student</li>
-            </ul>
+      </ul>
+    </div>
+    <div class="tree">
+      <ul>
+        <li>
+          I'm passionate about
+          <ul>
+            <li>
+              Coding
+              <ul>
+                <li>Python</li><!--
+                --><li>C#</li><!--
+                --><li>Dart</li>
+              </ul>
+            </li><!--
+            --><li>
+              Developing
+              <ul>
+                <li>Apps</li><!--
+                --><li>Games</li>
+              </ul>
+            </li><!--
+            --><li>
+              Learning
+              <ul>
+                <li>Technologies</li><!--
+                --><li>Frameworks</li><!--
+                --><li>New skills</li>
+              </ul>
+            </li><!--
+            --><li>Solving problems</li><!--
+            --><li>
+              Teaching
+              <ul>
+                <li>Programming</li><!--
+                --><li>Mathematics</li>
+              </ul>
+            </li><!--
+            --><li>Linux</li><!--
+            --><li>Fitness
+              <ul>
+                <li>Calisthenics</li>
+              </ul>
+            </li>
+          </ul>
         </li>
-        <li>Passionate about
-            <ul>
-                <li>Coding in
-                    <ul>
-                        <li>Python</li>
-                        <li>C#</li>
-                        <li>Dart</li>
-                    </ul>
-                </li>
-                <li>Developing
-                    <ul>
-                        <li>Apps</li>
-                        <li>Games</li>
-                    </ul>
-                </li>
-                <li>Learning
-                    <ul>
-                        <li>Technologies</li>
-                        <li>New skills</li>
-                    </ul>
-                </li>
-                <li>Solving problems</li>
-                <li>Teaching
-                    <ul>
-                        <li>Programming</li>
-                        <li>Mathematics</li>
-                    </ul>
-                </li>
-                <li>Linux</li>
-                <li>Fitness</li>
-            </ul>
-        </li>
-    </ul>
-    <h1 id="projects-h1">Projects</h1>
-    <ul class="projects-items">
-        <li><a href="./projects/worldtime.html">WorldTime</a></li>
-        <li><a href="./projects/savemyface.html">Save My Face</a></li>
-        <li><a href="./projects/gamewithoutart.html">Game Without Art</a></li>
-        <li><a href="./projects/slickcheck.html">Slick Check</a></li>
-        <li><a href="./projects/dotdodge.html">DotDodge</a></li>
-    </ul>
-</body>
+      </ul>
+    </div>
+    <h1 id="projects-h1"><span style="font-size: 10px; font-weight: 100;">some </span>Projects</h1>
+    <div class="projects-items">
+      <div style="height: 576px;" class="video-container">
+        <video style="float: left;" width="326.4px" height="576px" muted autoplay loop>
+          <source src="./videos/worldtime_vid.mp4">
+          WorldTime Preview Video
+        </video>
+        <div class="video-description">
+          <p><a href="https://github.com/AaEsS/world_time_fapp" target="_blank"><b>WorldTime [Dart, Flutter]</b></a> is a mobile app that uses web scraping and API calling to retrieve and show time data of regions from worldtimeapi.org. The app starts by automatically fetching the current time of the user's region. The user can choose from all of the regions presented in a scrollable list, or use an implemented search bar to find their desired one.</p>
+        </div>
+      </div>
+      <div style="height: 324px;" class="video-container">
+        <video style="float: right;" width="576px" height="324px" muted autoplay loop>
+          <source src="./videos/dotdodge_vid.mkv">
+          DotDodge Preview Video
+        </video>
+        <div class="video-description">
+          <p><a href="https://github.com/AaEsS/dtddge-android" target="_blank"><b>DotDodge [C#, Unity]</b></a> is a short game where the player tries to beat it by dodging all homing bullets/missiles. The game gets harder the longer you survive. The player wins when the timer hits zero.</p>
+          <p>Game published <a href="https://aaess.itch.io/dotdodge" target="_blank">here</a></p>
+        </div>
+      </div>
+      <div style="height: 576px;" class="video-container">
+        <video style="float: left;" width="326.4px" height="576px" muted autoplay loop>
+          <source src="./videos/smf_vid.mp4">
+          Save_My_Face Preview Video
+        </video>
+        <div class="video-description">
+          <p><a href="https://github.com/AaEsS/MeasureIT_Game_OtherVersion-Pub" target="_blank"><b>Save My Face [C#, Unity]</b></a> is a personal commercial mobile game about my face controlled by the player. The goal is to "save my face" from the bullets that are shot by a cannon constantly facing the player. There are powerups that can help the player survive longer. At the end, a score of how many bullets survived is shown. A leaderboard and ads are implemented as well.</p>
+          <p>Game published <a href="https://play.google.com/store/apps/details?id=com.AhAm.DodgEM" target="_blank">here</a></p>
+        </div>
+      </div>
+      <div style="height: 324px;" class="video-container">
+        <video style="float: right;" width="576px" height="324px" muted autoplay loop>
+          <source src="./videos/gwa_vid.mkv">
+          Game_Without_Art Preview Video
+        </video>
+        <div class="video-description">
+          <p><a href="https://github.com/AaEsS/Lockdown" target="_blank"><b>Game Without Art [C#, Unity]</b></a> is similar to Save My Face. This one has more powerups and the ability to use more than one at once. Instead of a cannon shooting, each bullet grows and pops to three small ones that act like their parent.</p>
+          <p>Game published <a href="https://aaess.itch.io/game-without-art" target="_blank">here</a></p>
+        </div>
+      </div>
+    </div>
+    <script>
+      let real_age = document.querySelector(".real_age");
+
+      let today = new Date();
+      let years = today.getFullYear() - 2002;
+      let months = today.getMonth() + 1 - 8;
+      if (months < 0) {
+        months += 12;
+        years -= 1;
+      }
+      let days = today.getDate() - 24;
+      if (days < 0) {
+        days += 31;
+        months -= 1;
+      }
+
+      real_age.innerHTML = (years + months / 12 + days / 365.25).toFixed(2);
+
+      real_age.setAttribute(
+        "tooltip",
+        `${years} years ${months !== 0 ? `${months} months` : ''} ${days !== 0 ? `${days} days` : ''}`
+      );
+    </script>
+  </body>
 </html>
