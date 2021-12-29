@@ -10,11 +10,10 @@
 body {
   line-height: 250%;
   background-color: rgb(75, 73, 73);
-  color: rgb(255, 255, 255);
+  color: white;
 }
 
 h1 {
-  color: rgb(255, 255, 255);
   text-align: center;
   font-size: 50px;
   margin-bottom: 70px;
@@ -153,6 +152,41 @@ b {
   font-size: 20px;
 }
 
-.video-container {
-  margin: 100px;
+// .video-container {
+//   margin: 100px;
+// }
+
+// .projects-items li{
+//   display: inline-block;
+//   list-style-type: none;
+// }
+
+.projects-items ul {
+  margin-inline: 50px;
+  // text-align: center;
+  list-style-type: none;
+  display: inline-flex;
+  margin-bottom: 80px;
+  // position: relative;
+}
+
+.projects-items li {
+  display: flex;
+  align-items: center;
+  margin-inline: 20px;
+}
+
+.projects-items p {
+  border: 0.1px solid white;
+  border-radius: 10px;
+  padding: 1em;
+  box-shadow: 1px 1px 10px 10px rgba(0, 0, 0, 0.1);
+}
+
+video {
+  border-radius: 10px;
+  box-shadow: 1px 1px 10px 10px rgba(0, 0, 0, 0.1);
+  margin-left: auto;
+  margin-right: auto;
+  display: block
 }

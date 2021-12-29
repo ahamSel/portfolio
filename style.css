@@ -14,7 +14,6 @@ body {
 }
 
 h1 {
-  color: white;
   text-align: center;
   font-size: 50px;
   margin-bottom: 70px;
@@ -153,7 +152,39 @@ b {
   font-size: 20px;
 }
 
-.video-container {
-  margin: 100px;
+.projects-items ul {
+  margin-inline: 50px;
+  list-style-type: none;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  margin-bottom: 80px;
+}
+
+.projects-items li {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-inline: 20px;
+}
+
+.projects-items p {
+  border: 0.1px solid white;
+  border-radius: 10px;
+  padding: 1em;
+  -webkit-box-shadow: 1px 1px 10px 10px rgba(0, 0, 0, 0.1);
+          box-shadow: 1px 1px 10px 10px rgba(0, 0, 0, 0.1);
+}
+
+video {
+  border-radius: 10px;
+  -webkit-box-shadow: 1px 1px 10px 10px rgba(0, 0, 0, 0.1);
+          box-shadow: 1px 1px 10px 10px rgba(0, 0, 0, 0.1);
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
 }
 /*# sourceMappingURL=style.css.map */
