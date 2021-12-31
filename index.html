@@ -3,12 +3,20 @@
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=1024">
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0" /> -->
     <link rel="stylesheet" href="./style.css" />
+    <script src="./script.js" defer></script>
     <title>ahames</title>
   </head>
   <body>
-    <h1>whoami</h1>
+    <nav>
+      <button><a href="#me">About me</a></button>
+      <button><a href="#projects">Projects</a></button>
+      <button><a href="#contactme">Contact</a></button>
+      <button><a href="./docs/trig.pdf">Resume</a></button>
+    </nav>
+    <h1 id="me">whoami</h1>
     <div class="tree">
       <ul>
         <li>
@@ -83,7 +91,7 @@
         </li>
       </ul>
     </div>
-    <h1 id="projects-h1"><span style="font-size: 10px; font-weight: 100;">some </span>Projects</h1>
+    <h1 id="projects"><span style="font-size: 10px; font-weight: 100;">some </span>Projects</h1>
     <div class="projects-items">
       <ul>
         <li>
@@ -98,7 +106,7 @@
       </ul>
       <ul>
         <li>
-          <p><a href="https://github.com/AaEsS/dtddge-android" target="_blank"><b>DotDodge [C#, Unity]</b></a> is a short game where the player tries to beat it by dodging all homing bullets/missiles. The game gets harder the longer you survive. The player wins when the timer hits zero. Game published <a href="https://aaess.itch.io/dotdodge" target="_blank">here</a></p>
+          <p><a href="https://github.com/AaEsS/dtddge-android" target="_blank"><b>DotDodge [C#, Unity]</b></a> is a short game where the player tries to beat it by dodging all homing missiles. The game gets harder the longer you survive. The player wins when the timer hits zero. Game published <a href="https://aaess.itch.io/dotdodge" target="_blank">here</a></p>
         </li>
         <li>
           <video width="576px" height="324px" muted autoplay loop>
@@ -130,28 +138,33 @@
         </li>
       </ul>
     </div>
-    <script>
-      let real_age = document.querySelector(".real_age");
-
-      let today = new Date();
-      let years = today.getFullYear() - 2002;
-      let months = today.getMonth() + 1 - 8;
-      if (months < 0) {
-        months += 12;
-        years -= 1;
-      }
-      let days = today.getDate() - 24;
-      if (days < 0) {
-        days += 31;
-        months -= 1;
-      }
-
-      real_age.innerHTML = (years + months / 12 + days / 365.25).toFixed(2);
-
-      real_age.setAttribute(
-        "tooltip",
-        `${years} years ${months !== 0 ? `${months} months` : ''} ${days !== 0 ? `${days} days` : ''}`
-      );
-    </script>
+    <h1 id="contactme">Contact Me</h1>
+    <div class="contact_infos">
+      <span style="margin: 20px;">E-mail: <a href="mailto:ess.ahmed.amine@gmail.com">ess.ahmed.amine@gmail.com</a>/<a href="mailto:aaesselmouni@mun.ca">aaesselmouni@mun.ca</a></span>
+      <span style="margin: 20px;">Phone: <a href="tel:+1(709)219-3395">+1(709)219-3395</a></span>
+    </div>
+    <form action="" method="post">
+      <ul>
+        <li>
+          <label for="name">Name:</label>
+          <input type="text" name="their_name" id="name" placeholder="(optional)">
+        </li>
+        <li>
+          <label for="email">E-mail:</label>
+          <input type="email" name="their_email" id="email" placeholder="(optional)">
+        </li>
+        <li>
+          <label for="phone">Phone number:</label>
+          <input type="tel" name="their_phone" id="phone" placeholder="(optional)">
+        </li>
+        <li>
+          <label for="message">Message (to <a href="mailto:ess.ahmed.amine@gmail.com">ess.ahmed.amine@gmail.com</a>):</label>
+          <textarea name="their_message" id="message" cols="30" rows="10" placeholder="Hello there!" required></textarea>
+        </li>
+        <li align="center">
+          <button type="submit">Send message</button>
+        </li>
+      </ul>
+    </form>
   </body>
 </html>
