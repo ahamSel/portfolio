@@ -261,13 +261,12 @@ button:focus {
   color: #4b4949;
 }
 
-nav button,
-.success button {
+nav button {
   padding: 10px;
 }
 
-nav button a,
-.success button a {
+nav a,
+.success a {
   color: white;
   text-decoration: none;
   background-image: none;
@@ -280,8 +279,8 @@ nav button a,
   border-radius: 20px;
 }
 
-nav button a:hover,
-.success button a:hover {
+nav a:hover,
+.success a:hover {
   color: #4b4949;
   font-weight: bold;
   background-color: gold;
@@ -299,5 +298,14 @@ nav button a:hover,
 }
 
 .success li {
-  margin: 100px;
+  margin: 150px;
+}
+
+.success button {
+  font-size: 50px;
+}
+
+.success a {
+  margin: -20px;
+  padding: 20px;
 }
