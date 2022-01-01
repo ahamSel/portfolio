@@ -24,9 +24,9 @@ real_age.setAttribute(
 );
 
 let last_vscroll = window.scrollY;
-let nav_btn_clicked = false;
+let nav_link_clicked = false;
 window.addEventListener("scroll", () => {
-  if (!nav_btn_clicked) {
+  if (!nav_link_clicked) {
     if (last_vscroll < window.scrollY) {
       nav.classList.add("scrolling_down");
     } else {
@@ -38,12 +38,11 @@ window.addEventListener("scroll", () => {
 });
 
 [...nav.children].forEach((nav_btn) => {
-  nav_btn.addEventListener("click", () => {
+  nav_btn.firstChild.addEventListener("click", () => {
     nav.classList.add("anchor_click");
-    nav_btn_clicked = true;
+    nav_link_clicked = true;
     setTimeout(() => {
-      nav_btn_clicked = false;
-      window.onscroll;
+      nav_link_clicked = false;
     }, 750);
   });
 });

@@ -279,8 +279,8 @@ nav a,
   border-radius: 20px;
 }
 
-nav a:hover,
-.success a:hover {
+nav a:hover, nav a:focus,
+.success a:hover, .success a:focus {
   color: #4b4949;
   font-weight: bold;
   background-color: gold;
