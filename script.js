@@ -47,7 +47,7 @@ window.addEventListener("scroll", () => {
   });
 });
 
-// Solution for video loading _ lazy-loading https://web.dev/lazy-loading-video/
+// video loading _ lazy-loading https://web.dev/lazy-loading-video/
 
 document.addEventListener("DOMContentLoaded", function() {
   var lazyVideos = [].slice.call(document.querySelectorAll("video.lazy"));
