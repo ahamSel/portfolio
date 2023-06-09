@@ -1,5 +1,5 @@
 const nav = document.querySelector("nav");
-const real_age = document.querySelector(".real_age");
+// const real_age = document.querySelector(".real_age");
 
 let today = new Date();
 let years = today.getFullYear() - 2002;
@@ -14,14 +14,14 @@ if (days < 0) {
   months -= 1;
 }
 
-real_age.innerHTML = (years + months / 12 + days / 365.25).toFixed(2);
+// real_age.innerHTML = (years + months / 12 + days / 365.25).toFixed(2);
 
-real_age.setAttribute(
-  "tooltip",
-  `${years} years ${months !== 0 ? `${months} months` : ""} ${
-    days !== 0 ? `${days} days` : ""
-  }`
-);
+// real_age.setAttribute(
+//   "tooltip",
+//   `${years} years ${months !== 0 ? `${months} months` : ""} ${
+//     days !== 0 ? `${days} days` : ""
+//   }`
+// );
 
 let last_vscroll = window.scrollY;
 let nav_link_clicked = false;
