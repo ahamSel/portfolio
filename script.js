@@ -1,27 +1,4 @@
 const nav = document.querySelector("nav");
-// const real_age = document.querySelector(".real_age");
-
-let today = new Date();
-let years = today.getFullYear() - 2002;
-let months = today.getMonth() + 1 - 8;
-if (months < 0) {
-  months += 12;
-  years -= 1;
-}
-let days = today.getDate() - 24;
-if (days < 0) {
-  days += 31;
-  months -= 1;
-}
-
-// real_age.innerHTML = (years + months / 12 + days / 365.25).toFixed(2);
-
-// real_age.setAttribute(
-//   "tooltip",
-//   `${years} years ${months !== 0 ? `${months} months` : ""} ${
-//     days !== 0 ? `${days} days` : ""
-//   }`
-// );
 
 let last_vscroll = window.scrollY;
 let nav_link_clicked = false;
@@ -47,8 +24,7 @@ window.addEventListener("scroll", () => {
   });
 });
 
-// video loading _ lazy-loading https://web.dev/lazy-loading-video/
-
+// video lazy-loading
 document.addEventListener("DOMContentLoaded", function() {
   var lazyVideos = [].slice.call(document.querySelectorAll("video.lazy"));
 
