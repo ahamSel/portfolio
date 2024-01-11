@@ -14,15 +14,15 @@ window.addEventListener("scroll", () => {
   }
 });
 
-[...nav.children].forEach((nav_btn) => {
-  nav_btn.firstChild.addEventListener("click", () => {
-    nav.classList.add("anchor_click");
-    nav_link_clicked = true;
-    setTimeout(() => {
-      nav_link_clicked = false;
-    }, 750);
-  });
-});
+// [...nav.children].forEach((nav_btn) => {
+//   nav_btn.firstChild.addEventListener("click", () => {
+//     nav.classList.add("anchor_click");
+//     nav_link_clicked = true;
+//     setTimeout(() => {
+//       nav_link_clicked = false;
+//     }, 750);
+//   });
+// });
 
 // video lazy-loading
 document.addEventListener("DOMContentLoaded", function() {

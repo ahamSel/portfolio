@@ -1,11 +1,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap");
 
-
 *,
 *::after,
 *::before {
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
   font-family: "Source Code Pro", monospace;
 }
 
@@ -15,7 +13,7 @@ html {
 
 body {
   line-height: 250%;
-  background-color: #4b4949;
+  background-color: rgb(75, 73, 73);
   color: white;
   padding-top: 50px;
 }
@@ -32,13 +30,11 @@ nav {
   top: 5px;
   text-align: center;
   z-index: 1;
-  -webkit-transition: 300ms;
   transition: 300ms;
 }
 
 .scrolling_down {
-  -webkit-transform: translateY(-100px);
-          transform: translateY(-100px);
+  transform: translateY(-100px);
 }
 
 .anchor_click {
@@ -54,12 +50,10 @@ h1 {
 a {
   color: gold;
   text-decoration: none;
-  background-image: -webkit-gradient(linear, left top, right top, from(#4b4949), color-stop(gold), to(#4b4949));
   background-image: linear-gradient(90deg, #4b4949, gold, #4b4949);
   background-size: 0% 0px;
   background-repeat: no-repeat;
   background-position: bottom;
-  -webkit-transition: background-size 300ms ease;
   transition: background-size 300ms ease;
 }
 
@@ -74,14 +68,9 @@ a {
   position: absolute;
   bottom: -0.5rem;
   left: 50%;
-  -webkit-transform: translateX(-50%) translateY(100%) scale(0);
-          transform: translateX(-50%) translateY(100%) scale(0);
-  -webkit-transition: 150ms -webkit-transform;
-  transition: 150ms -webkit-transform;
+  transform: translateX(-50%) translateY(100%) scale(0);
   transition: 150ms transform;
-  transition: 150ms transform, 150ms -webkit-transform;
-  -webkit-transform-origin: top center;
-          transform-origin: top center;
+  transform-origin: top center;
 }
 
 .real_age::before {
@@ -89,8 +78,7 @@ a {
   color: white;
   text-align: center;
   border-radius: 10px;
-  -webkit-box-shadow: 1px 1px 10px 10px rgba(0, 0, 0, 0.1);
-          box-shadow: 1px 1px 10px 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 1px 1px 10px 10px rgba(0, 0, 0, 0.1);
   padding: 5px 10px 5px 10px;
   background: #4b4949;
   border: 0.1px solid;
@@ -98,17 +86,14 @@ a {
 
 .real_age:hover::before,
 .real_age:hover::after {
-  -webkit-transform: translateX(-50%) translateY(100%) scale(1);
-          transform: translateX(-50%) translateY(100%) scale(1);
+  transform: translateX(-50%) translateY(100%) scale(1);
 }
 
 a:hover {
   background-size: 100% 2px;
 }
 
-#projects {
-  margin-top: 100px;
-}
+$border-width: 1px;
 
 .tree ul {
   position: relative;
@@ -116,12 +101,11 @@ a:hover {
   white-space: nowrap;
   margin: 0 auto;
   text-align: center;
-}
-
-.tree ul::after {
-  content: "";
-  display: table;
-  clear: both;
+  &::after {
+    content: "";
+    display: table;
+    clear: both;
+  }
 }
 
 .tree li {
@@ -131,43 +115,39 @@ a:hover {
   list-style: none;
   position: relative;
   padding: 1em 0.5em 0 0.5em;
-}
-
-.tree li::before, .tree li::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  right: 50%;
-  border-top: 1px solid #ccc;
-  width: 50%;
-  height: 1em;
-}
-
-.tree li::after {
-  right: auto;
-  left: 50%;
-  border-left: 1px solid #ccc;
-}
-
-.tree li:only-child::after, .tree li:only-child::before {
-  display: none;
-}
-
-.tree li:only-child {
-  padding-top: 0;
-}
-
-.tree li:first-child::before, .tree li:last-child::after {
-  border: 0 none;
-}
-
-.tree li:last-child::before {
-  border-right: 1px solid #ccc;
-  border-radius: 0 5px 0 0;
-}
-
-.tree li:first-child::after {
-  border-radius: 5px 0 0 0;
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 50%;
+    border-top: $border-width solid #ccc;
+    width: 50%;
+    height: 1em;
+  }
+  &::after {
+    right: auto;
+    left: 50%;
+    border-left: $border-width solid #ccc;
+  }
+  &:only-child::after,
+  &:only-child::before {
+    display: none;
+  }
+  &:only-child {
+    padding-top: 0;
+  }
+  &:first-child::before,
+  &:last-child::after {
+    border: 0 none;
+  }
+  &:last-child::before {
+    border-right: $border-width solid #ccc;
+    border-radius: 0 5px 0 0;
+  }
+  &:first-child::after {
+    border-radius: 5px 0 0 0;
+  }
 }
 
 .tree ul ul::before {
@@ -175,7 +155,7 @@ a:hover {
   position: absolute;
   top: 0;
   left: 50%;
-  border-left: 1px solid #ccc;
+  border-left: $border-width solid #ccc;
   width: 0;
   height: 1em;
 }
@@ -187,19 +167,13 @@ b {
 .projects-items ul {
   margin-inline: 50px;
   list-style: none;
-  display: -webkit-inline-box;
-  display: -ms-inline-flexbox;
   display: inline-flex;
   margin-bottom: 80px;
 }
 
 .projects-items li {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  align-items: center;
   margin-inline: 20px;
 }
 
@@ -207,17 +181,15 @@ b {
   border: 0.1px solid white;
   border-radius: 10px;
   padding: 1em;
-  -webkit-box-shadow: 1px 1px 10px 10px rgba(0, 0, 0, 0.1);
-          box-shadow: 1px 1px 10px 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 1px 1px 10px 10px rgba(0, 0, 0, 0.1);
 }
 
 video {
   border-radius: 10px;
-  -webkit-box-shadow: 1px 1px 10px 10px rgba(0, 0, 0, 0.1);
-          box-shadow: 1px 1px 10px 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 1px 1px 10px 10px rgba(0, 0, 0, 0.1);
   margin-left: auto;
   margin-right: auto;
-  display: block;
+  display: block
 }
 
 form {
@@ -245,17 +217,14 @@ label {
 input,
 textarea {
   width: 1000px;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-  -webkit-box-shadow: 1px 1px 10px 10px rgba(0, 0, 0, 0.1);
-          box-shadow: 1px 1px 10px 10px rgba(0, 0, 0, 0.1);
+  box-sizing: border-box;
+  box-shadow: 1px 1px 10px 10px rgba(0, 0, 0, 0.1);
   border: 0.1px solid white;
   background-color: #4b4949;
   border-radius: 5px;
   color: white;
   font-size: 20px;
   padding: 10px;
-  -webkit-transition: 300ms;
   transition: 300ms;
 }
 
@@ -277,9 +246,7 @@ button {
   background-color: #4b4949;
   border: 0.1px solid white;
   color: white;
-  -webkit-box-shadow: 1px 1px 10px 10px rgba(0, 0, 0, 0.1);
-          box-shadow: 1px 1px 10px 10px rgba(0, 0, 0, 0.1);
-  -webkit-transition: 300ms;
+  box-shadow: 1px 1px 10px 10px rgba(0, 0, 0, 0.1);
   transition: 300ms;
 }
 
@@ -299,7 +266,6 @@ nav a,
   color: white;
   text-decoration: none;
   background-image: none;
-  -webkit-transition: 300ms;
   transition: 300ms;
   font-weight: normal;
   background-color: #4b4949;
@@ -322,15 +288,9 @@ nav a:hover, nav a:focus,
 
 .success {
   height: 90vh;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  justify-content: center;
+  align-items: center;
 }
 
 .success li {
@@ -345,4 +305,3 @@ nav a:hover, nav a:focus,
   margin: -20px;
   padding: 20px;
 }
-/*# sourceMappingURL=style.css.map */

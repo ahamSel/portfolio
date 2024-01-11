@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="initial-scale=0.0">
+    <link rel="stylesheet" href="../styles/style.css">
+    <link rel="icon" type="image/x-icon" href="../images/title_icon.ico">
+    <title>Contact Me - ahamSel</title>
+</head>
+<body>
+    <nav>
+        <button><a href="./aboutme.html">About&nbsp;me</a></button>
+        <button><a href="./projects.html">Projects</a></button>
+        <button><a href="./contact.html">Contact</a></button>
+        <button><a href="../docs/resume.pdf" target="_blank">Resume</a></button>
+    </nav>
+
+    <h1 id="contactme">Contact Me</h1>
+    <form action="https://formsubmit.co/b4ea46c88a0c7b732ba84144c7b3275b" method="post">
+        <ul>
+          <li>
+            <label for="name">Name:</label>
+            <input type="text" name="their_name" id="name" placeholder="(optional)">
+          </li>
+          <li>
+            <label for="email">E-mail:</label>
+            <input type="email" name="their_email" id="email" placeholder="(optional)">
+          </li>
+          <li>
+            <label for="phone">Phone number:</label>
+            <input type="tel" name="their_phone" id="phone" placeholder="(optional)">
+          </li>
+          <li>
+            <label for="message">Message:</label>
+            <textarea name="their_message" id="message" cols="30" rows="10" placeholder="Hi there!" required></textarea>
+          </li>
+          <li style="text-align: center;">
+            <button type="submit">Send message</button>
+          </li>
+        </ul>
+        <!-- to avoid spam -->
+        <input type="text" name="_honey" style="display: none;">
+        <!-- disables reCAPTCHA -->
+        <input type="hidden" name="_captcha" value="false">
+        <!-- thank you page -->
+        <input type="hidden" name="_next" value="https://ahamsel.github.io/portfolio_website/thankyou.html">
+      </form>
+
+    <script src="../script.js" defer></script>
+</body>
+</html>
