@@ -102,7 +102,6 @@ const projects = [
   }
   
   
-  // video lazy-loading
   document.addEventListener("DOMContentLoaded", function() {
     var lazyVideos = [].slice.call(document.querySelectorAll("video.lazy"));
   
@@ -118,6 +117,8 @@ const projects = [
             }
   
             video.target.load();
+            video.target.muted = true;
+            video.target.play().catch(e => console.error("Autoplay failed", e));
             video.target.classList.remove("lazy");
             lazyVideoObserver.unobserve(video.target);
           }
@@ -127,6 +128,21 @@ const projects = [
       lazyVideos.forEach(function(lazyVideo) {
         lazyVideoObserver.observe(lazyVideo);
       });
+    } else {
+      lazyVideos.forEach(function(lazyVideo) {
+        for (var source in lazyVideo.children) {
+          var videoSource = lazyVideo.children[source];
+          if (typeof videoSource.tagName === "string" && videoSource.tagName === "SOURCE") {
+            videoSource.src = videoSource.dataset.src;
+          }
+        }
+  
+        lazyVideo.load();
+        lazyVideo.muted = true;
+        lazyVideo.play().catch(e => console.error("Autoplay failed", e));
+        lazyVideo.classList.remove("lazy");
+      });
     }
   });
+  
   
