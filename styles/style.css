@@ -61,6 +61,11 @@ h1 {
   margin-bottom: 70px;
 }
 
+.projects-footer {
+  margin-top: 0px;
+  margin-bottom: 80px;
+}
+
 a {
   color: gold;
   text-decoration: none;
@@ -316,7 +321,7 @@ nav a:hover, nav a:focus,
   padding: 20px;
 }
 
-#projects a,
+.projects-footer a,
 #contactme a {
   margin-left: 20px;
   display: inline-block;
@@ -327,8 +332,8 @@ nav a:hover, nav a:focus,
   transform: scale(1);
 }
 
-#projects a:hover,
-#projects a:focus,
+.projects-footer a:hover,
+.projects-footer a:focus,
 #contactme a:hover,
 #contactme a:focus {
   border-color: gold;
@@ -336,7 +341,7 @@ nav a:hover, nav a:focus,
   transform: scale(1.1);
 }
 
-#projects img,
+.projects-footer img,
 #contactme img {
   display: block;
   width: 25px;
