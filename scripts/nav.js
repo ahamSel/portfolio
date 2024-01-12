@@ -10,6 +10,5 @@ window.addEventListener("scroll", () => {
       nav.classList.remove("scrolling_down");
     }
     last_vscroll = window.scrollY;
-    nav.classList.remove("anchor_click");
   }
 });

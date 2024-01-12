@@ -1,7 +1,7 @@
 const projects = [
     {
       title: "Chat [Dart, Flutter]",
-      description: "is a mobile chat app that provides the service of sending and receiving messages. An optimized database schema is used for efficient storage and retrieval of data, including messages, user information, and chat conversations. The app also utilizes a cloud messaging system to send and receive notifications about new messages when it is not in the foreground.",
+      description: "is a mobile chat app that provides the service of sending and receiving messages. An optimized database schema is used for efficient storage and retrieval of data, including messages, user information, and chat conversations. The app also utilizes a cloud messaging system to send and receive notifications about new messages when it is not in foreground.",
       githubLink: "https://github.com/ahamSel/flutter_chat_app",
       videoPoster: "../images/chat_poster.jpg",
       videoSources: [
@@ -13,7 +13,7 @@ const projects = [
     },
     {
       title: "Authentication & Database with Firebase [Dart, Flutter]",
-      description: "is a mobile app that provides a range of essential functionalities such as Sign-Up/Log-In, Google Sign-In and linking, email confirmation, password reset, and the ability to add or modify personal information. Additionally, the app allows showing real-time users from the database. This functionality can be used to display any type of data or updates in real-time.",
+      description: "is a mobile app that provides a range of essential functionalities such as Sign-Up/Log-In, Google Sign-In and linking, email verification, password reset, and the ability to add or modify personal information. Additionally, the app allows showing, in real-time, users from the database. This functionality can be used to display any type of data or update in real-time, general or specific to each user.",
       githubLink: "https://github.com/ahamSel/flutter_firebase_login_signup",
       videoPoster: "../images/auth_db_poster.jpg",
       videoSources: [
@@ -43,6 +43,18 @@ const projects = [
       videoSources: [
         { src: "../videos/gwa_vid.webm", type: "video/webm" },
         { src: "../videos/gwa_vid.mp4", type: "video/mp4" }
+      ],
+      width: "576px",
+      height: "324px"
+    },
+    {
+      title: "DotDodge [C#, Unity]",
+      description: `is game where the player tries to beat it by dodging all homing missiles. The game gets harder the longer you survive. The player wins when the timer hits zero. <a href="https://aaess.itch.io/dotdodge" target="_blank">Try it out!</a>`,
+      githubLink: "https://github.com/ahamSel/dtddge-android",
+      videoPoster: "../images/dotdodge_poster.jpg",
+      videoSources: [
+          { src: "../videos/dotdodge_vid.webm", type: "video/webm" },
+          { src: "../videos/dotdodge_vid.mp4", type: "video/mp4" }
       ],
       width: "576px",
       height: "324px"
