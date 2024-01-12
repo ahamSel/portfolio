@@ -75,7 +75,7 @@ const projects = [
   },
 ];
 
-const projectsContainer = document.querySelector('.projects-items');
+const projectsContainer = document.querySelector('.project-items');
 
 projects.forEach((project, index) => {
   const projectItem = document.createElement('ul');
