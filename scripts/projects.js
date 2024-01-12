@@ -25,7 +25,7 @@ const projects = [
     },
     {
       title: "World Times [Dart, Flutter]",
-      description: `is a mobile app to retrieve and show time data of regions from <a href="https://worldtimeapi.org" target="_blank">worldtimeapi.org</a>. The app starts by automatically fetching the current time of the user's region. The user can choose from all the regions presented in a scrollable list-view or use an implemented search bar to find their desired one.`,
+      description: `is a mobile app to retrieve and show time data of regions from <a href="https://worldtimeapi.org" target="_blank">worldtimeapi.org</a>. The app starts by automatically fetching the current time of the user's region, determined via public IP address. The user can choose from all the regions presented in a scrollable list-view or use an implemented search bar to find their desired one.`,
       githubLink: "https://github.com/ahamSel/world_time_fapp",
       videoPoster: "../images/worldtimes_poster.jpg",
       videoSources: [
@@ -37,7 +37,7 @@ const projects = [
     },
     {
       title: "Game Without Art [C#, Unity]",
-      description: `is a game where the player must dodge balls constantly bouncing off walls. Each ball grows and pops into three small ones that act as their parent. Powerups are implemented to help survive longer. <a href="https://aaess.itch.io/game-without-art" target="_blank">Try it out!</a>`,
+      description: `is a 2D game where the player navigates through a space filled with bouncing red balls. At a certain increased size, each ball splits into smaller ones, progressively intensifying the gameplay. Players can utilize power-ups to enhance their chances of enduring longer. <a href="https://aaess.itch.io/game-without-art" target="_blank">Try it out!</a>`,
       githubLink: "https://github.com/ahamSel/Lockdown",
       videoPoster: "../images/gwa_poster.jpg",
       videoSources: [
@@ -49,7 +49,7 @@ const projects = [
     },
     {
       title: "DotDodge [C#, Unity]",
-      description: `is game where the player tries to beat it by dodging all homing missiles. The game gets harder the longer you survive. The player wins when the timer hits zero. <a href="https://aaess.itch.io/dotdodge" target="_blank">Try it out!</a>`,
+      description: `is a 2D game where the player's objective is to evade increasingly challenging homing missiles. As time progresses, the difficulty level escalates, making survival more complex. The game ends when the timer runs out, marking the player's triumph. <a href="https://aaess.itch.io/dotdodge" target="_blank">Try it out!</a>`,
       githubLink: "https://github.com/ahamSel/dtddge-android",
       videoPoster: "../images/dotdodge_poster.jpg",
       videoSources: [
