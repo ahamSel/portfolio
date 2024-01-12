@@ -316,16 +316,19 @@ nav a:hover, nav a:focus,
   padding: 20px;
 }
 
+#projects a,
 #contactme a {
   margin-left: 20px;
   display: inline-block;
   background-color: #4b4949;
-  border-radius: 10%;
+  border-radius: 25%;
   transition: border-color 0.3s ease, transform 0.3s ease;
   box-shadow: 0px 0px 0px 2px gold;
   transform: scale(1);
 }
 
+#projects a:hover,
+#projects a:focus,
 #contactme a:hover,
 #contactme a:focus {
   border-color: gold;
@@ -333,6 +336,7 @@ nav a:hover, nav a:focus,
   transform: scale(1.1);
 }
 
+#projects img,
 #contactme img {
   display: block;
   width: 25px;
