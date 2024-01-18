@@ -13,7 +13,7 @@ const projects = [
     },
     {
       title: "Authentication & Database with Firebase [Dart, Flutter]",
-      description: "is a mobile app that provides a range of essential functionalities such as Sign-Up/Log-In, Google Sign-In and linking, email verification, password reset, and the ability to add or modify personal information. Additionally, the app allows showing, in real-time, users from the database. This functionality can be used to display any type of data or update in real-time, general or specific to each user.",
+      description: "is a mobile app that provides a range of essential functionalities such as Sign-Up/Log-In, Google Sign-In and linking, email verification, password reset, and the ability to add or modify personal information. Additionally, real-time display of other users from the database is allowed. This functionality can be used for any type of data or update in real-time, general or specific to each user.",
       githubLink: "https://github.com/ahamSel/flutter_firebase_login_signup",
       videoPoster: "../images/auth_db_poster.jpg",
       videoSources: [
