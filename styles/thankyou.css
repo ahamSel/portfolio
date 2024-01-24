@@ -14,11 +14,6 @@
 }
 
 .success a {
-  margin: -20px;
-  padding: 20px;
-}
-
-.success a {
   color: white;
   text-decoration: none;
   background-image: none;
@@ -26,8 +21,8 @@
   font-weight: normal;
   background-color: #4b4949;
   padding-inline: 100px;
-  margin: -10px;
-  padding: 10px;
+  margin: -20px;
+  padding: 20px;
   border-radius: 20px;
 }
 

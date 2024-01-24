@@ -125,7 +125,7 @@ nav a:hover, nav a:focus {
   background-color: gold;
 }
 
-@import 'about';
-@import 'contact';
-@import 'projects';
-@import 'thankyou';
+@import './about.scss';
+@import './contact.scss';
+@import './projects.scss';
+@import './thankyou.scss';
