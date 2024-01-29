@@ -126,7 +126,7 @@ nav a:hover, nav a:focus {
     padding-top: 25px;
   }
   h1 {
-    font-size: 40px;
+    font-size: 35px;
     margin-top: 30px;
     margin-bottom: 30px;
   }
@@ -246,6 +246,7 @@ nav a:hover, nav a:focus {
 .projects-footer {
   margin-top: 30px;
   margin-bottom: 75px;
+  font-size: 35px;
 }
 
 .project-items {
@@ -326,6 +327,10 @@ video {
   }
   .project-item {
     margin-block: 30px;
+  }
+  .projects-footer {
+    font-size: 30px;
+    margin-bottom: 60px;
   }
   .project-items p {
     width: 100%;
