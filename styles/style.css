@@ -238,7 +238,7 @@ nav a:focus {
     text-align: left;
   }
   .about-paragraph {
-    margin-inline: 30px;
+    margin-inline: 20px;
     margin-block: 20px;
     font-size: 16px;
     display: flex;
@@ -328,6 +328,9 @@ video {
   }
   .project-item {
     margin-block: 30px;
+  }
+  .project-items {
+    margin-inline: 20px;
   }
   .projects-footer {
     font-size: 30px;

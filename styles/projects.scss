@@ -1,8 +1,8 @@
 .projects-footer {
-    margin-top: 30px;
-    margin-bottom: 75px;
-    font-size: 35px;
-  }
+  margin-top: 30px;
+  margin-bottom: 75px;
+  font-size: 35px;
+}
 
 .project-items {
   margin-inline: 30px;
@@ -41,7 +41,7 @@ video {
 }
 
 .projects-footer a:hover,
-.projects-footer a:focus{
+.projects-footer a:focus {
   border-color: gold;
   box-shadow: 0px 0px 6px 3px gold;
   transform: scale(1.1);
@@ -58,7 +58,7 @@ video {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-bottom: 80px; 
+  margin-bottom: 80px;
 }
 
 @media screen and (min-width: 1196px) {
@@ -90,6 +90,10 @@ video {
     margin-block: 30px;
   }
 
+  .project-items {
+    margin-inline: 20px;
+  }
+
   .projects-footer {
     font-size: 30px;
     margin-bottom: 60px;
@@ -102,7 +106,7 @@ video {
     border-top-right-radius: 0;
     border-top: none;
   }
-  
+
   video {
     border-bottom-left-radius: 0;
     border-bottom-right-radius: 0;

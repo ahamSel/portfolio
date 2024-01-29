@@ -10,6 +10,7 @@ $border-width: 1px;
   white-space: nowrap;
   margin: 0 auto;
   text-align: center;
+
   &::after {
     content: "";
     display: table;
@@ -24,6 +25,7 @@ $border-width: 1px;
   list-style: none;
   position: relative;
   padding: 1em 0.5em 0 0.5em;
+
   &::before,
   &::after {
     content: "";
@@ -34,26 +36,32 @@ $border-width: 1px;
     width: 50%;
     height: 1em;
   }
+
   &::after {
     right: auto;
     left: 50%;
     border-left: $border-width solid #ccc;
   }
+
   &:only-child::after,
   &:only-child::before {
     display: none;
   }
+
   &:only-child {
     padding-top: 0;
   }
+
   &:first-child::before,
   &:last-child::after {
     border: 0 none;
   }
+
   &:last-child::before {
     border-right: $border-width solid #ccc;
     border-radius: 0 5px 0 0;
   }
+
   &:first-child::after {
     border-radius: 5px 0 0 0;
   }
@@ -88,7 +96,7 @@ $border-width: 1px;
   }
 
   .about-paragraph {
-    margin-inline: 30px;
+    margin-inline: 20px;
     margin-block: 20px;
     font-size: 16px;
     display: flex;

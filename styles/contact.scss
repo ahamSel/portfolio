@@ -10,8 +10,8 @@ form ul {
   padding: 0;
   margin: 0;
 }
-  
-form li + li {
+
+form li+li {
   margin-top: 1em;
 }
 
@@ -21,7 +21,7 @@ label {
   text-align: left;
   margin-bottom: 5px;
 }
-  
+
 input,
 textarea {
   width: 100%;
@@ -40,7 +40,7 @@ input:focus,
 textarea:focus {
   outline-color: gold;
 }
-  
+
 textarea {
   vertical-align: top;
   height: auto;
