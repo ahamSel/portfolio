@@ -1,2 +1,5 @@
 .DS_Store
 *.css.map
+
+*.css
+!styles/style.css
