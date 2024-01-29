@@ -38,16 +38,8 @@
   color: #4b4949;
 }
 
-/* You don't need a media query for max-width: 600px if you want the same style on all devices */
-/* But if you need to adjust for very small screens, you can uncomment this
 @media screen and (max-width: 600px) {
-  .success h1 {
-    font-size: 3rem; // Adjust if needed for very small screens
-  }
-
   .success a {
-    font-size: 1.5rem; // Adjust if needed for very small screens
-    padding: 15px 40px; // Adjust if needed for very small screens
+    font-size: 25px;
   }
-}
-*//*# sourceMappingURL=thankyou.css.map */
+}/*# sourceMappingURL=thankyou.css.map */

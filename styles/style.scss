@@ -34,6 +34,7 @@ body {
   0% {
     background-position: 0 0;
   }
+
   100% {
     background-position: 100px 100px;
   }
@@ -121,7 +122,8 @@ nav a {
   background-repeat: repeat;
 }
 
-nav a:hover, nav a:focus {
+nav a:hover,
+nav a:focus {
   font-weight: bold;
   background-color: gold;
   color: #4b4949;
@@ -133,13 +135,13 @@ nav a:hover, nav a:focus {
     line-height: 200%;
     padding-top: 25px;
   }
-  
+
   h1 {
     font-size: 35px;
     margin-top: 30px;
     margin-bottom: 30px;
   }
-  
+
   nav {
     position: fixed;
     bottom: 0;
@@ -159,7 +161,8 @@ nav a:hover, nav a:focus {
     flex: 1;
     margin: 0;
     border-radius: 0;
-    box-shadow: 0 -11px 10px 0 rgba(0, 0, 0, 0.1);;
+    box-shadow: 0 -11px 10px 0 rgba(0, 0, 0, 0.1);
+    ;
   }
 
   .hide-nav {
