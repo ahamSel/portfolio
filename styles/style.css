@@ -20,7 +20,7 @@ body {
   animation: moveBackground 10s linear infinite;
   color: white;
   font-size: 17px;
-  padding-top: 50px;
+  padding-top: 40px;
 }
 
 @keyframes moveBackground {
@@ -46,14 +46,14 @@ nav {
   transition: 300ms;
 }
 
-.scrolling_down {
-  transform: translateY(-100px);
+.hide-nav {
+  transform: translateY(-200%);
 }
 
 h1 {
   text-align: center;
   font-size: 50px;
-  margin-top: 70px;
+  margin-top: 60px;
   margin-bottom: 70px;
 }
 
@@ -94,27 +94,67 @@ button:focus {
   color: #4b4949;
 }
 
-nav button {
-  padding: 10px;
-}
-
 nav a {
-  color: white;
-  text-decoration: none;
-  background-image: none;
-  transition: 300ms;
-  font-weight: normal;
-  background-color: #4b4949;
-  padding-inline: 100px;
-  margin: -10px;
-  padding: 10px;
+  display: inline-block;
+  margin-block: 15px;
   border-radius: 20px;
+  padding: 1px;
+  padding-inline: 10px;
+  font-size: 20px;
+  background-color: #4b4949;
+  border: 0.1px solid white;
+  color: white;
+  box-shadow: 1px 1px 10px 10px rgba(0, 0, 0, 0.1);
+  transition: 300ms;
+  text-decoration: none;
+  text-align: center;
+  background-image: none;
+  background-size: auto;
+  background-repeat: repeat;
 }
 
 nav a:hover, nav a:focus {
-  color: #4b4949;
   font-weight: bold;
   background-color: gold;
+  color: #4b4949;
+  background-image: none;
+}
+
+@media screen and (max-width: 600px) {
+  body {
+    line-height: 200%;
+    padding-top: 25px;
+  }
+  h1 {
+    font-size: 40px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+  }
+  nav {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    top: auto;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    transition: transform 0.3s ease-in-out;
+    height: auto;
+  }
+  nav a {
+    line-height: 250%;
+    font-size: 16px;
+    flex: 1;
+    margin: 0;
+    border-radius: 0;
+  }
+  .hide-nav {
+    transform: translateY(200%);
+  }
+}
+#me {
+  margin-bottom: 45px;
 }
 
 .tree ul {
@@ -179,92 +219,40 @@ nav a:hover, nav a:focus {
   height: 1em;
 }
 
-form {
-  margin: 0 auto;
-  width: 1000px;
+.about-paragraph {
+  display: none;
 }
 
-form ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
+@media screen and (max-width: 1140px) {
+  .tree {
+    display: none;
+  }
+  .about-paragraph p {
+    border: 0.1px solid white;
+    background-color: #4b4949;
+    border-radius: 10px;
+    padding: 1em;
+    box-shadow: 1px 1px 10px 10px rgba(0, 0, 0, 0.1);
+    text-align: left;
+  }
+  .about-paragraph {
+    margin-inline: 30px;
+    margin-block: 20px;
+    font-size: 16px;
+    display: flex;
+  }
 }
-
-form li + li {
-  margin-top: 1em;
-}
-
-label {
-  font-size: 20px;
-  display: inline-block;
-  text-align: left;
-  margin-bottom: 5px;
-}
-
-input,
-textarea {
-  width: 1000px;
-  box-sizing: border-box;
-  box-shadow: 1px 1px 10px 10px rgba(0, 0, 0, 0.1);
-  border: 0.1px solid white;
-  background-color: #4b4949;
-  border-radius: 5px;
-  color: white;
-  font-size: 20px;
-  padding: 10px;
-  transition: 300ms;
-}
-
-input:focus,
-textarea:focus {
-  outline-color: gold;
-}
-
-textarea {
-  vertical-align: top;
-  height: 13em;
-}
-
-#contactme a {
-  margin-left: 20px;
-  display: inline-block;
-  background-color: #4b4949;
-  border-radius: 25%;
-  transition: border-color 0.3s ease, transform 0.3s ease;
-  box-shadow: 0px 0px 0px 2px gold;
-  transform: scale(1);
-}
-
-#contactme a:hover,
-#contactme a:focus {
-  border-color: gold;
-  box-shadow: 0px 0px 6px 3px gold;
-  transform: scale(1.1);
-}
-
-#contactme img {
-  display: block;
-  width: 25px;
-  height: auto;
-  transition: transform 0.3s ease;
-}
-
 .projects-footer {
-  margin-top: 0px;
-  margin-bottom: 80px;
+  margin-top: 30px;
+  margin-bottom: 75px;
 }
 
-.project-items ul {
-  margin-inline: 50px;
-  list-style: none;
-  display: inline-flex;
-  margin-bottom: 80px;
-}
-
-.project-items li {
+.project-items {
+  margin-inline: 30px;
+  margin-bottom: -10px;
   display: flex;
-  align-items: center;
-  margin-inline: 20px;
+  flex-wrap: wrap;
+  justify-content: space-around;
 }
 
 .project-items p {
@@ -273,6 +261,7 @@ textarea {
   border-radius: 10px;
   padding: 1em;
   box-shadow: 1px 1px 10px 10px rgba(0, 0, 0, 0.1);
+  text-align: left;
 }
 
 video {
@@ -307,36 +296,184 @@ video {
   transition: transform 0.3s ease;
 }
 
-.success {
-  height: 90vh;
+.project-item {
   display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 80px;
+}
+
+@media screen and (min-width: 1196px) {
+  .project-item {
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 45px;
+  }
+  .project-items {
+    margin-inline: 80px;
+  }
+  .project-item.left .video-container {
+    order: -1;
+  }
+  .project-item.right .video-container {
+    order: 1;
+  }
+}
+@media screen and (max-width: 1195px) {
+  .project-item .video-container {
+    order: -1;
+  }
+  .project-item {
+    margin-block: 30px;
+  }
+  .project-items p {
+    width: 100%;
+    margin-top: 0;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    border-top: none;
+  }
+  video {
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    width: 100%;
+    height: auto;
+  }
+}
+form {
+  margin: 0 auto;
+  margin-top: -30px;
+  width: 90%;
+  max-width: 1000px;
+}
+
+form ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+form li + li {
+  margin-top: 1em;
+}
+
+label {
+  font-size: 20px;
+  display: block;
+  text-align: left;
+  margin-bottom: 5px;
+}
+
+input,
+textarea {
+  width: 100%;
+  box-sizing: border-box;
+  box-shadow: 1px 1px 10px 10px rgba(0, 0, 0, 0.1);
+  border: 0.1px solid white;
+  background-color: #4b4949;
+  border-radius: 5px;
+  color: white;
+  font-size: 20px;
+  padding: 10px;
+  transition: 300ms;
+}
+
+input:focus,
+textarea:focus {
+  outline-color: gold;
+}
+
+textarea {
+  vertical-align: top;
+  height: auto;
+  min-height: 13em;
+}
+
+@media screen and (max-width: 600px) {
+  form {
+    margin-top: 40px;
+    width: calc(100% - 40px);
+  }
+  input,
+  textarea {
+    width: calc(100% - 20px);
+    font-size: 16px;
+  }
+}
+#contactme a {
+  margin-left: 20px;
+  display: inline-block;
+  background-color: #4b4949;
+  border-radius: 25%;
+  transition: border-color 0.3s ease, transform 0.3s ease;
+  box-shadow: 0px 0px 0px 2px gold;
+  transform: scale(1);
+}
+
+#contactme a:hover,
+#contactme a:focus {
+  border-color: gold;
+  box-shadow: 0px 0px 6px 3px gold;
+  transform: scale(1.1);
+}
+
+#contactme img {
+  display: block;
+  width: 25px;
+  height: auto;
+  transition: transform 0.3s ease;
+}
+
+.success {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
+  text-align: center;
 }
 
-.success li {
-  margin: 150px;
-}
-
-.success button {
-  font-size: 50px;
+.success h1 {
+  margin-bottom: 1em;
 }
 
 .success a {
-  color: white;
-  text-decoration: none;
-  background-image: none;
-  transition: 300ms;
-  font-weight: normal;
-  background-color: #4b4949;
-  padding-inline: 100px;
-  margin: -20px;
-  padding: 20px;
+  display: inline-block;
+  margin: 1em 0;
   border-radius: 20px;
+  padding: 20px;
+  font-size: 2rem;
+  background-color: #4b4949;
+  border: 0.1px solid white;
+  color: white;
+  box-shadow: 1px 1px 10px 10px rgba(0, 0, 0, 0.1);
+  transition: 300ms;
+  text-decoration: none;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  background-image: none;
+  background-size: auto;
+  background-repeat: repeat;
+  text-align: center;
+  text-decoration: none;
 }
 
-.success a:hover, .success a:focus {
-  color: #4b4949;
+.success a:hover,
+.success a:focus {
   font-weight: bold;
   background-color: gold;
-}/*# sourceMappingURL=style.css.map */
+  color: #4b4949;
+}
+
+/* You don't need a media query for max-width: 600px if you want the same style on all devices */
+/* But if you need to adjust for very small screens, you can uncomment this
+@media screen and (max-width: 600px) {
+  .success h1 {
+    font-size: 3rem; // Adjust if needed for very small screens
+  }
+
+  .success a {
+    font-size: 1.5rem; // Adjust if needed for very small screens
+    padding: 15px 40px; // Adjust if needed for very small screens
+  }
+}
+*//*# sourceMappingURL=style.css.map */

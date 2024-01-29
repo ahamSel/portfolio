@@ -1,6 +1,8 @@
 form {
   margin: 0 auto;
-  width: 1000px;
+  margin-top: -30px;
+  width: 90%;
+  max-width: 1000px;
 }
 
 form ul {
@@ -15,14 +17,14 @@ form li + li {
 
 label {
   font-size: 20px;
-  display: inline-block;
+  display: block;
   text-align: left;
   margin-bottom: 5px;
 }
 
 input,
 textarea {
-  width: 1000px;
+  width: 100%;
   box-sizing: border-box;
   box-shadow: 1px 1px 10px 10px rgba(0, 0, 0, 0.1);
   border: 0.1px solid white;
@@ -41,9 +43,21 @@ textarea:focus {
 
 textarea {
   vertical-align: top;
-  height: 13em;
+  height: auto;
+  min-height: 13em;
 }
 
+@media screen and (max-width: 600px) {
+  form {
+    margin-top: 40px;
+    width: calc(100% - 40px);
+  }
+  input,
+  textarea {
+    width: calc(100% - 20px);
+    font-size: 16px;
+  }
+}
 #contactme a {
   margin-left: 20px;
   display: inline-block;

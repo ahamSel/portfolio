@@ -1,14 +1,11 @@
 const nav = document.querySelector("nav");
 
-let last_vscroll = window.scrollY;
-let nav_link_clicked = false;
+let lastScrollY = window.scrollY;
 window.addEventListener("scroll", () => {
-  if (!nav_link_clicked) {
-    if (last_vscroll < window.scrollY) {
-      nav.classList.add("scrolling_down");
-    } else {
-      nav.classList.remove("scrolling_down");
-    }
-    last_vscroll = window.scrollY;
+  if (window.scrollY > lastScrollY) {
+    nav.classList.add("hide-nav");
+  } else {
+    nav.classList.remove("hide-nav");
   }
+  lastScrollY = window.scrollY;
 });
