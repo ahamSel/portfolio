@@ -25,7 +25,7 @@ const projects = [
   },
   {
     title: "World Times [Dart, Flutter]",
-    description: `is a mobile app to retrieve and show time data of regions from <a href="https://worldtimeapi.org" target="_blank">worldtimeapi.org</a>. It starts by automatically fetching the current time of the user's region, determined via public IP address. The user can choose from all the regions presented in a scrollable list-view or use an implemented search bar to find the one they're looking for.`,
+    description: `is a mobile app to retrieve and show time data of regions from <a href="https://worldtimeapi.org" target="_blank">worldtimeapi.org</a>. It starts by automatically fetching the current time of the user's region, determined via public IP address. The user can choose from all regions presented in a scrollable list-view or use an implemented search bar to find the one they're looking for.`,
     githubLink: "https://github.com/ahamSel/world_time_fapp",
     videoPoster: "../images/worldtimes_poster.jpg",
     videoSources: [
@@ -49,7 +49,7 @@ const projects = [
   },
   {
     title: "DotDodge [C#, Unity]",
-    description: `is a 2D game where the player's objective is to evade increasingly challenging homing objects. As time progresses, the difficulty level increases, making survival more challenging. The game ends when the timer runs out, marking the player's triumph. <a href="https://aaess.itch.io/dotdodge" target="_blank">Try it out!</a>`,
+    description: `is a 2D game where the player's objective is to evade increasingly challenging homing objects. As time progresses, the difficulty level increases, making survival more challenging. The game ends when the timer runs out, marking the player's victory. <a href="https://aaess.itch.io/dotdodge" target="_blank">Try it out!</a>`,
     githubLink: "https://github.com/ahamSel/dtddge-android",
     videoPoster: "../images/dotdodge_poster.jpg",
     videoSources: [
