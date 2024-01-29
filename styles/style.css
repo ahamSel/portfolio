@@ -223,7 +223,7 @@ nav a:hover, nav a:focus {
   display: none;
 }
 
-@media screen and (max-width: 1140px) {
+@media screen and (max-width: 1335px) {
   .tree {
     display: none;
   }
