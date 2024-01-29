@@ -1,7 +1,7 @@
 const projects = [
   {
     title: "Chat [Dart, Flutter]",
-    description: "is a mobile chat app that provides the service of sending and receiving messages. An optimized database schema is used for efficient storage and retrieval of data, including messages, user information, and chat conversations. The app also utilizes a cloud messaging system to send and receive notifications about new messages when it is not in foreground.",
+    description: "is a mobile chat app that enables users to send and receive messages. An optimized database schema is used for efficient storage and retrieval of data, including messages, user information, and chat conversations. The app also utilizes a Firebase-based cloud messaging system to send and receive notifications about new messages when it's not in foreground.",
     githubLink: "https://github.com/ahamSel/flutter_chat_app",
     videoPoster: "../images/chat_poster.jpg",
     videoSources: [
@@ -13,7 +13,7 @@ const projects = [
   },
   {
     title: "Authentication & Database with Firebase [Dart, Flutter]",
-    description: "is a mobile app that provides a range of essential functionalities such as Sign-Up/Log-In, Google Sign-In and linking, email verification, password reset, and the ability to add or modify personal information. Additionally, real-time display of other users from the database is allowed. This functionality can be used for any type of data or update in real-time, general or specific to each user.",
+    description: "is a mobile app that provides a range of functionalities such as Sign-Up/Log-In, Google Sign-In and linking, email verification, password reset, and the ability to add or modify personal information. It also allows for the real-time display of users from the database, a feature that can be used for any type of data or updates, whether they are general or specific to each user.",
     githubLink: "https://github.com/ahamSel/flutter_firebase_login_signup",
     videoPoster: "../images/auth_db_poster.jpg",
     videoSources: [
@@ -25,7 +25,7 @@ const projects = [
   },
   {
     title: "World Times [Dart, Flutter]",
-    description: `is a mobile app to retrieve and show time data of regions from <a href="https://worldtimeapi.org" target="_blank">worldtimeapi.org</a>. The app starts by automatically fetching the current time of the user's region, determined via public IP address. The user can choose from all the regions presented in a scrollable list-view or use an implemented search bar to find their desired one.`,
+    description: `is a mobile app to retrieve and show time data of regions from <a href="https://worldtimeapi.org" target="_blank">worldtimeapi.org</a>. It starts by automatically fetching the current time of the user's region, determined via public IP address. The user can choose from all the regions presented in a scrollable list-view or use an implemented search bar to find the one they're looking for.`,
     githubLink: "https://github.com/ahamSel/world_time_fapp",
     videoPoster: "../images/worldtimes_poster.jpg",
     videoSources: [
@@ -37,7 +37,7 @@ const projects = [
   },
   {
     title: "Game Without Art [C#, Unity]",
-    description: `is a 2D game where the player navigates through a space filled with bouncing red balls. At a certain increased size, each ball splits into smaller ones, progressively intensifying the gameplay. Players can utilize power-ups to enhance their chances of enduring longer. <a href="https://aaess.itch.io/game-without-art" target="_blank">Try it out!</a>`,
+    description: `is a 2D game where the player navigates through a space filled with bouncing red balls. At a certain increased size, each ball splits into smaller ones, progressively intensifying the gameplay. Players can use power-ups to enhance their chances of survival. <a href="https://aaess.itch.io/game-without-art" target="_blank">Try it out!</a>`,
     githubLink: "https://github.com/ahamSel/Lockdown",
     videoPoster: "../images/gwa_poster.jpg",
     videoSources: [
@@ -49,7 +49,7 @@ const projects = [
   },
   {
     title: "DotDodge [C#, Unity]",
-    description: `is a 2D game where the player's objective is to evade increasingly challenging homing missiles. As time progresses, the difficulty level escalates, making survival more complex. The game ends when the timer runs out, marking the player's triumph. <a href="https://aaess.itch.io/dotdodge" target="_blank">Try it out!</a>`,
+    description: `is a 2D game where the player's objective is to evade increasingly challenging homing objects. As time progresses, the difficulty level increases, making survival more challenging. The game ends when the timer runs out, marking the player's triumph. <a href="https://aaess.itch.io/dotdodge" target="_blank">Try it out!</a>`,
     githubLink: "https://github.com/ahamSel/dtddge-android",
     videoPoster: "../images/dotdodge_poster.jpg",
     videoSources: [
