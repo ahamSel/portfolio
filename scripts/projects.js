@@ -1,12 +1,24 @@
 const projects = [
   {
+    title: "Financial Insight [TypeScript, React, Python, Flask]",
+    description: "is a web application that offers personalized financial insights and budgeting tips. It analyzes user-input data on expenses, income, and wishlist costs to provide smart, AI-driven recommendations for better financial planning. The backend is developed with Flask, showcasing a seamless external API integration for a user-friendly experience.",
+    githubLink: "https://github.com/ahamSel/financial_insight",
+    videoPoster: "../assets/images/financial-insight_vid.jpg",
+    videoSources: [
+      { src: "../assets/videos/financial-insight_vid.webm", type: "video/webm" },
+      { src: "../assets/videos/financial-insight_vid.mp4", type: "video/mp4" }
+    ],
+    width: "600px",
+    height: "450px"
+  },
+  {
     title: "Chat [Dart, Flutter]",
     description: "is a mobile chat app that enables users to send and receive messages. An optimized database schema is used for efficient storage and retrieval of data, including messages, user information, and chat conversations. The app also utilizes a Firebase-based cloud messaging system to send and receive notifications about new messages when it's not in foreground.",
     githubLink: "https://github.com/ahamSel/flutter_chat_app",
-    videoPoster: "../images/chat_poster.jpg",
+    videoPoster: "../assets/images/chat_poster.jpg",
     videoSources: [
-      { src: "../videos/chat_vid.webm", type: "video/webm" },
-      { src: "../videos/chat_vid.mp4", type: "video/mp4" }
+      { src: "../assets/videos/chat_vid.webm", type: "video/webm" },
+      { src: "../assets/videos/chat_vid.mp4", type: "video/mp4" }
     ],
     width: "546.6px",
     height: "600px"
@@ -15,10 +27,10 @@ const projects = [
     title: "Authentication & Database with Firebase [Dart, Flutter]",
     description: "is a mobile app that provides a range of functionalities such as Sign-Up/Log-In, Google Sign-In and linking, email verification, password reset, and the ability to add or modify personal information. It also allows real-time display of users from the database, a feature that can be used for any type of data or updates, whether they are general or specific to each user.",
     githubLink: "https://github.com/ahamSel/flutter_firebase_login_signup",
-    videoPoster: "../images/auth_db_poster.jpg",
+    videoPoster: "../assets/images/auth_db_poster.jpg",
     videoSources: [
-      { src: "../videos/auth_db_vid.webm", type: "video/webm" },
-      { src: "../videos/auth_db_vid.mp4", type: "video/mp4" }
+      { src: "../assets/videos/auth_db_vid.webm", type: "video/webm" },
+      { src: "../assets/videos/auth_db_vid.mp4", type: "video/mp4" }
     ],
     width: "324px",
     height: "673.8px"
@@ -27,10 +39,10 @@ const projects = [
     title: "World Times [Dart, Flutter]",
     description: `is a mobile app to retrieve and show time data of regions from <a href="https://worldtimeapi.org" target="_blank">worldtimeapi.org</a>. It starts by automatically fetching the current time of the user's region, determined via public IP address. The user can choose from all regions presented in a scrollable list-view or use an implemented search bar to find the one they're looking for.`,
     githubLink: "https://github.com/ahamSel/world_time_fapp",
-    videoPoster: "../images/worldtimes_poster.jpg",
+    videoPoster: "../assets/images/worldtimes_poster.jpg",
     videoSources: [
-      { src: "../videos/worldtimes_vid.webm", type: "video/webm" },
-      { src: "../videos/worldtimes_vid.mp4", type: "video/mp4" }
+      { src: "../assets/videos/worldtimes_vid.webm", type: "video/webm" },
+      { src: "../assets/videos/worldtimes_vid.mp4", type: "video/mp4" }
     ],
     width: "324px",
     height: "673.8px"
@@ -39,10 +51,10 @@ const projects = [
     title: "Game Without Art [C#, Unity]",
     description: `is a 2D game where the player navigates through a space filled with bouncing red balls. At a certain increased size, each ball splits into smaller ones, progressively intensifying the gameplay. Players can use power-ups to enhance their chances of survival. <a href="https://aaess.itch.io/game-without-art" target="_blank">Try it out!</a>`,
     githubLink: "https://github.com/ahamSel/Lockdown",
-    videoPoster: "../images/gwa_poster.jpg",
+    videoPoster: "../assets/images/gwa_poster.jpg",
     videoSources: [
-      { src: "../videos/gwa_vid.webm", type: "video/webm" },
-      { src: "../videos/gwa_vid.mp4", type: "video/mp4" }
+      { src: "../assets/videos/gwa_vid.webm", type: "video/webm" },
+      { src: "../assets/videos/gwa_vid.mp4", type: "video/mp4" }
     ],
     width: "576px",
     height: "324px"
@@ -51,10 +63,10 @@ const projects = [
     title: "DotDodge [C#, Unity]",
     description: `is a 2D game where the player's objective is to evade increasingly challenging homing objects. As time progresses, the difficulty level increases, making survival more challenging. The game ends when the timer runs out, marking the player's victory. <a href="https://aaess.itch.io/dotdodge" target="_blank">Try it out!</a>`,
     githubLink: "https://github.com/ahamSel/dtddge-android",
-    videoPoster: "../images/dotdodge_poster.jpg",
+    videoPoster: "../assets/images/dotdodge_poster.jpg",
     videoSources: [
-      { src: "../videos/dotdodge_vid.webm", type: "video/webm" },
-      { src: "../videos/dotdodge_vid.mp4", type: "video/mp4" }
+      { src: "../assets/videos/dotdodge_vid.webm", type: "video/webm" },
+      { src: "../assets/videos/dotdodge_vid.mp4", type: "video/mp4" }
     ],
     width: "576px",
     height: "324px"
