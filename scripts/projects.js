@@ -1,7 +1,7 @@
 const projects = [
   {
     title: "Financial Insight [TypeScript, React, Python, Flask]",
-    description: "is a web application that offers personalized financial insights and budgeting tips. It analyzes user-input data on expenses, income, and wishlist costs to provide smart, AI-driven recommendations for better financial planning. The backend is developed with Flask, showcasing a seamless external API integration for a user-friendly experience.",
+    description: `is a full-stack web application that offers personalized financial insights and budgeting tips. It analyzes user-input data on expenses, income, and wishlist costs to provide smart, AI-driven recommendations for better financial planning. The backend, built with Flask, operates as a RESTful API, processing requests from the frontend and displaying the results to the user. <a href="https://ahamsel.github.io/financial_insight" target='_blank'>Try it out!</a>`,
     githubLink: "https://github.com/ahamSel/financial_insight",
     videoPoster: "../assets/images/financial-insight_vid.jpg",
     videoSources: [
