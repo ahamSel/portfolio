@@ -1,55 +1,106 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../styles/style.css">
-    <link rel="icon" type="image/x-icon" href="../assets/images/title_icon.ico">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../styles/style.css" />
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="../assets/images/title_icon.ico"
+    />
     <title>Contact - Ahmed Amine Es-Selmouni</title>
-</head>
-<body>
+  </head>
+  <body>
+    <div class="loading-overlay">
+      <span class="loader"></span>
+    </div>
+
     <nav>
-        <a href="./about">About</a>
-        <a href="./projects">Projects</a>
-        <a href="./contact">Contact</a>
-        <a href="../assets/docs/AhmedAmine_Esselmouni_Resume.pdf" target="_blank">Resume</a>
+      <a href="./about">About</a>
+      <a href="./projects">Projects</a>
+      <a href="./contact">Contact</a>
+      <a href="../assets/docs/AhmedAmine_Esselmouni_Resume.pdf" target="_blank"
+        >Resume</a
+      >
     </nav>
 
-    <h1 id="contactme">Get in touch!<a href="https://www.linkedin.com/in/aaesselmouni/" target="_blank">
-        <img src="../assets/images/linkedin.png" alt="LinkedIn" width="30" height="30">
-      </a></h1>
-    
-    <form action="https://formsubmit.co/b4ea46c88a0c7b732ba84144c7b3275b" method="post">
-        <ul>
-          <li>
-            <label for="name">Name:</label>
-            <input type="text" name="their_name" id="name" placeholder="(optional)">
-          </li>
-          <li>
-            <label for="email">E-mail:</label>
-            <input type="email" name="their_email" id="email" placeholder="(optional)">
-          </li>
-          <li>
-            <label for="phone">Phone number:</label>
-            <input type="tel" name="their_phone" id="phone" placeholder="(optional)">
-          </li>
-          <li>
-            <label for="message">Message:</label>
-            <textarea name="their_message" id="message" cols="30" rows="10" placeholder="Hi there!" required></textarea>
-          </li>
-          <li style="text-align: center;">
-            <button type="submit">Send message</button>
-          </li>
-        </ul>
-        <!-- to avoid spam -->
-        <input type="text" name="_honey" style="display: none;">
-        <!-- disables reCAPTCHA -->
-        <input type="hidden" name="_captcha" value="false">
-        <!-- thank you page -->
-        <input type="hidden" name="_next" value="https://ahamsel.github.io/portfolio/pages/thankyou">
-      </form>
+    <h1 id="contactme">
+      Get in touch!<a
+        href="https://www.linkedin.com/in/aaesselmouni/"
+        target="_blank"
+      >
+        <img
+          src="../assets/images/linkedin.png"
+          alt="LinkedIn"
+          width="30"
+          height="30"
+        />
+      </a>
+    </h1>
+
+    <form
+      id="contactForm"
+      action="https://formsubmit.co/b4ea46c88a0c7b732ba84144c7b3275b"
+      method="post"
+    >
+      <ul>
+        <li>
+          <label for="name">Name:</label>
+          <input
+            type="text"
+            name="their_name"
+            id="name"
+            placeholder="(optional)"
+          />
+        </li>
+        <li>
+          <label for="email">E-mail:</label>
+          <input
+            type="email"
+            name="their_email"
+            id="email"
+            placeholder="(optional)"
+          />
+        </li>
+        <li>
+          <label for="phone">Phone number:</label>
+          <input
+            type="tel"
+            name="their_phone"
+            id="phone"
+            placeholder="(optional)"
+          />
+        </li>
+        <li>
+          <label for="message">Message:</label>
+          <textarea
+            name="their_message"
+            id="message"
+            cols="30"
+            rows="10"
+            placeholder="Hi there!"
+            required
+          ></textarea>
+        </li>
+        <li style="text-align: center">
+          <button type="submit">Send message</button>
+        </li>
+      </ul>
+      <!-- to avoid spam -->
+      <input type="text" name="_honey" style="display: none" />
+      <!-- disables reCAPTCHA -->
+      <input type="hidden" name="_captcha" value="false" />
+      <!-- thank you page -->
+      <input
+        type="hidden"
+        name="_next"
+        value="https://ahamsel.github.io/portfolio/pages/thankyou"
+      />
+    </form>
 
     <script src="../scripts/nav.js" defer></script>
-</body>
+    <script src="../scripts/contact.js" defer></script>
+  </body>
 </html>
