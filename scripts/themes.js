@@ -1,6 +1,7 @@
 const themes = {
     nightOwl: {
         background: '#011627',
+        backgroundRGB: '1, 22, 39',
         backgroundGradient1: '#112630',
         backgroundGradient2: '#0b1f2c',
         text: '#d6deeb',
@@ -9,6 +10,7 @@ const themes = {
     },
     original: {
         background: '#4b4949',
+        backgroundRGB: '75, 73, 73',
         backgroundGradient1: '#545454',
         backgroundGradient2: '#404040',
         text: 'white',
@@ -17,6 +19,7 @@ const themes = {
     },
     light: {
         background: '#ffffff',
+        backgroundRGB: '255, 255, 255',
         backgroundGradient1: '#f5f5f5',
         backgroundGradient2: '#e0e0e0',
         text: '#2d2d2d',
@@ -28,6 +31,7 @@ const themes = {
 function setTheme(themeName) {
     const theme = themes[themeName];
     document.documentElement.style.setProperty('--background', theme.background);
+    document.documentElement.style.setProperty('--background-rgb', theme.backgroundRGB);
     document.documentElement.style.setProperty('--gradient1', theme.backgroundGradient1);
     document.documentElement.style.setProperty('--gradient2', theme.backgroundGradient2);
     document.documentElement.style.setProperty('--text', theme.text);
