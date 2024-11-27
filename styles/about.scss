@@ -32,7 +32,7 @@ $border-width: 1px;
     position: absolute;
     top: 0;
     right: 50%;
-    border-top: $border-width solid #ccc;
+    border-top: $border-width solid var(--tree-lines);
     width: 50%;
     height: 1em;
   }
@@ -40,7 +40,7 @@ $border-width: 1px;
   &::after {
     right: auto;
     left: 50%;
-    border-left: $border-width solid #ccc;
+    border-left: $border-width solid var(--tree-lines);
   }
 
   &:only-child::after,
@@ -58,7 +58,7 @@ $border-width: 1px;
   }
 
   &:last-child::before {
-    border-right: $border-width solid #ccc;
+    border-right: $border-width solid var(--tree-lines);
     border-radius: 0 5px 0 0;
   }
 
@@ -72,7 +72,7 @@ $border-width: 1px;
   position: absolute;
   top: 0;
   left: 50%;
-  border-left: $border-width solid #ccc;
+  border-left: $border-width solid var(--tree-lines);
   width: 0;
   height: 1em;
 }
@@ -87,8 +87,8 @@ $border-width: 1px;
   }
 
   .about-paragraph p {
-    border: 0.1px solid white;
-    background-color: #4b4949;
+    border: 0.1px solid var(--text);
+    background-color: var(--background);
     border-radius: 10px;
     padding: 1em;
     box-shadow: 1px 1px 10px 10px rgba(0, 0, 0, 0.1);

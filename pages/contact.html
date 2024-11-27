@@ -100,7 +100,23 @@
       />
     </form>
 
+    <div class="theme-toggle">
+      <button class="theme-toggle-btn" onclick="toggleThemeMenu()">
+        <span class="theme-icon">🎨</span>
+      </button>
+      <div class="theme-menu">
+        <button onclick="setTheme('original')" class="theme-btn">
+          Original
+        </button>
+        <button onclick="setTheme('nightOwl')" class="theme-btn">
+          Night Owl
+        </button>
+        <button onclick="setTheme('light')" class="theme-btn">Light</button>
+      </div>
+    </div>
+
     <script src="../scripts/nav.js" defer></script>
     <script src="../scripts/contact.js" defer></script>
+    <script src="../scripts/themes.js" defer></script>
   </body>
 </html>

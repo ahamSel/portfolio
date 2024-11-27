@@ -34,18 +34,12 @@
             <li>
               <ul>
                 <!--
-                -->
-                <li>Living in St. John's, Canada 🍁</li>
+                --><li>Living in St. John's, Canada 🍁</li>
               </ul>
-            </li>
-            <!--
-            -->
-            <li>
+            </li><!--
+            --><li>
               Current undergrad 🎓 @
-              <a
-                href="https://mun.ca/"
-                style="font-size: 1.25rem"
-                target="_blank"
+              <a href="https://mun.ca/" style="font-size: 1.25rem;" target="_blank"
                 >MUN</a
               >
               <ul>
@@ -61,52 +55,34 @@
         <li>
           I enjoy
           <ul>
-            <li>Solving problems 🧩</li>
-            <!--
-            -->
-            <li>
+          <li>Solving problems 🧩</li><!--
+            --><li>
               Programming 💻
               <ul>
-                <li>Python 🐍</li>
-                <!--
-                -->
-                <li>C#</li>
-                <!--
-                -->
-                <li>Dart 🎯</li>
+                <li>Python 🐍</li><!--
+                --><li>C#</li><!--
+                --><li>Dart 🎯</li>
               </ul>
-            </li>
-            <!--
-            -->
-            <li>
+            </li><!--
+            --><li>
               Developing
               <ul>
-                <li>Apps 📱</li>
-                <!--
-                -->
-                <li>Games 🎮</li>
+                <li>Apps 📱</li><!--
+                --><li>Games 🎮</li>
               </ul>
-            </li>
-            <!--
-            -->
-            <li>
+            </li><!--
+            --><li>
               Learning
               <ul>
-                <li>Technologies 🌐</li>
-                <!--
-                -->
-                <li>Frameworks ⚙️</li>
-                <!--
-                -->
-                <li>New skills 💡</li>
+                <li>Technologies 🌐</li><!--
+                --><li>Frameworks ⚙️</li><!--
+                --><li>New skills 💡</li>
               </ul>
-            </li>
-            <!--
-            -->
-            <li>Math 🧮</li>
-            <!--
-            -->
-            <li>Linux 🐧</li>
+            </li><!--
+            --><li>
+              Math 🧮
+            </li><!--
+            --><li>Linux 🐧</li>
           </ul>
         </li>
       </ul>
@@ -130,6 +106,22 @@
       </p>
     </div>
 
+    <div class="theme-toggle">
+      <button class="theme-toggle-btn" onclick="toggleThemeMenu()">
+        <span class="theme-icon">🎨</span>
+      </button>
+      <div class="theme-menu">
+        <button onclick="setTheme('original')" class="theme-btn">
+          Original
+        </button>
+        <button onclick="setTheme('nightOwl')" class="theme-btn">
+          Night Owl
+        </button>
+        <button onclick="setTheme('light')" class="theme-btn">Light</button>
+      </div>
+    </div>
+
     <script src="../scripts/nav.js" defer></script>
+    <script src="../scripts/themes.js" defer></script>
   </body>
 </html>

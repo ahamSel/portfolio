@@ -14,8 +14,8 @@
 
 
 .project-items p {
-  border: 0.1px solid white;
-  background-color: #4b4949;
+  border: 0.1px solid var(--text);
+  background-color: var(--background);
   border-radius: 10px;
   padding: 1em;
   box-shadow: 1px 1px 10px 10px rgba(0, 0, 0, 0.1);
@@ -24,26 +24,27 @@
 
 video {
   border-radius: 10px;
-  box-shadow: 1px 1px 10px 10px rgba(0, 0, 0, 0.1);
   margin-left: auto;
   margin-right: auto;
-  display: block
+  display: block;
+  border: 2px solid var(--accent);
+  box-shadow: 0 0 15px var(--accent);
 }
 
 .projects-footer a {
   margin-left: 20px;
   display: inline-block;
-  background-color: #4b4949;
+  background-color: var(--background);
   border-radius: 25%;
   transition: border-color 0.3s ease, transform 0.3s ease;
-  box-shadow: 0px 0px 0px 2px gold;
+  box-shadow: 0px 0px 0px 2px var(--accent);
   transform: scale(1);
 }
 
 .projects-footer a:hover,
 .projects-footer a:focus {
-  border-color: gold;
-  box-shadow: 0px 0px 6px 3px gold;
+  border-color: var(--accent);
+  box-shadow: 0px 0px 6px 3px var(--accent);
   transform: scale(1.1);
 }
 
@@ -112,5 +113,6 @@ video {
     border-bottom-right-radius: 0;
     width: 100%;
     height: auto;
+    border-bottom: none;
   }
 }

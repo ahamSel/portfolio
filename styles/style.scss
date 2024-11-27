@@ -11,12 +11,21 @@ html {
   scroll-behavior: smooth;
 }
 
+:root {
+  --background: '';
+  --gradient1: '';
+  --gradient2: '';
+  --text: '';
+  --accent: '';
+  --tree-lines: '';
+}
+
 body {
   line-height: 250%;
-  background-color: #4b4949;
+  background-color: var(--background);
   background-image:
-    radial-gradient(circle, #545454 10%, transparent 10%),
-    radial-gradient(circle, #404040 10%, transparent 10%);
+    radial-gradient(circle, var(--gradient1) 10%, transparent 10%),
+    radial-gradient(circle, var(--gradient2) 10%, transparent 10%);
   background-position:
     0 0,
     25px 25px,
@@ -25,7 +34,7 @@ body {
   background-size: 100px 100px;
   background-attachment: fixed;
   animation: moveBackground 10s linear infinite;
-  color: white;
+  color: var(--text);
   font-size: 17px;
   padding-top: 40px;
 }
@@ -67,9 +76,9 @@ h1 {
 }
 
 a {
-  color: gold;
+  color: var(--accent);
   text-decoration: none;
-  background-image: linear-gradient(90deg, #4b4949, gold, #4b4949);
+  background-image: linear-gradient(90deg, var(--background), var(--accent), var(--background));
   background-size: 0% 0px;
   background-repeat: no-repeat;
   background-position: bottom;
@@ -89,9 +98,9 @@ button {
   border-radius: 20px;
   padding: 20px;
   font-size: 20px;
-  background-color: #4b4949;
-  border: 0.1px solid white;
-  color: white;
+  background-color: var(--background);
+  border: 0.1px solid var(--text);
+  color: var(--text);
   box-shadow: 1px 1px 10px 10px rgba(0, 0, 0, 0.1);
   transition: 300ms;
 }
@@ -99,8 +108,8 @@ button {
 button:hover,
 button:focus {
   font-weight: bold;
-  background-color: gold;
-  color: #4b4949;
+  background-color: var(--accent);
+  color: var(--background);
 }
 
 nav a {
@@ -110,9 +119,9 @@ nav a {
   padding: 1px;
   padding-inline: 10px;
   font-size: 20px;
-  background-color: #4b4949;
-  border: 0.1px solid white;
-  color: white;
+  background-color: var(--background);
+  border: 0.1px solid var(--text);
+  color: var(--text);
   box-shadow: 1px 1px 10px 10px rgba(0, 0, 0, 0.1);
   transition: 300ms;
   text-decoration: none;
@@ -125,8 +134,8 @@ nav a {
 nav a:hover,
 nav a:focus {
   font-weight: bold;
-  background-color: gold;
-  color: #4b4949;
+  background-color: var(--accent);
+  color: var(--background);
   background-image: none;
 }
 
@@ -181,7 +190,7 @@ nav a:focus {
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(75, 73, 73, 0.9);
+  background: rgba(1, 22, 39, 0.9);
   backdrop-filter: blur(5px);
   display: none;
   justify-content: center;
@@ -192,8 +201,8 @@ nav a:focus {
 .loader {
   width: 48px;
   height: 48px;
-  border: 5px solid #FFF;
-  border-bottom-color: gold;
+  border: 5px solid var(--text);
+  border-bottom-color: var(--accent);
   border-radius: 50%;
   display: inline-block;
   box-sizing: border-box;
@@ -212,4 +221,103 @@ nav a:focus {
 
 .loading .loading-overlay {
   display: flex;
+}
+
+.theme-toggle {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 1000;
+}
+
+.theme-toggle-btn {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.theme-icon {
+  font-size: 24px;
+}
+
+.theme-menu {
+  position: absolute;
+  bottom: 60px;
+  right: 0;
+  background-color: var(--background);
+  border: 1px solid var(--text);
+  border-radius: 10px;
+  padding: 10px;
+  visibility: hidden;
+  flex-direction: column;
+  gap: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  transform: translateY(20px);
+  opacity: 0;
+  transition: transform 0.2s ease, opacity 0.2s ease, visibility 0.2s ease;
+  display: flex;
+}
+
+.theme-menu.show {
+  visibility: visible;
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.theme-btn {
+  position: relative;
+}
+
+.theme-btn.selected {
+  background-color: var(--accent);
+  color: var(--background);
+  font-weight: bold;
+}
+
+.theme-menu button {
+  white-space: nowrap;
+  padding: 10px 20px;
+  margin: 0;
+}
+
+@media screen and (max-width: 600px) {
+  .theme-toggle {
+    bottom: 60px;
+    transition: bottom 0.3s ease-in-out;
+  }
+
+  body.nav-hidden .theme-toggle {
+    bottom: 20px;
+  }
+
+  .theme-toggle-btn {
+    width: 40px;
+    height: 40px;
+  }
+
+  .theme-icon {
+    font-size: 20px;
+  }
+
+  .theme-menu {
+    bottom: 50px;
+    padding: 8px;
+    gap: 3px;
+    transition: bottom 0.3s ease-in-out, transform 0.2s ease, opacity 0.2s ease, visibility 0.2s ease;
+  }
+
+  body.nav-hidden .theme-menu {
+    bottom: 50px;
+  }
+
+  .theme-menu button {
+    font-size: 16px;
+    padding: 8px 15px;
+    white-space: nowrap;
+  }
 }

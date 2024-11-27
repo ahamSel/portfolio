@@ -27,10 +27,10 @@ textarea {
   width: 100%;
   box-sizing: border-box;
   box-shadow: 1px 1px 10px 10px rgba(0, 0, 0, 0.1);
-  border: 0.1px solid white;
-  background-color: #4b4949;
+  border: 0.1px solid var(--text);
+  background-color: var(--background);
   border-radius: 5px;
-  color: white;
+  color: var(--text);
   font-size: 20px;
   padding: 10px;
   transition: 300ms;
@@ -38,7 +38,7 @@ textarea {
 
 input:focus,
 textarea:focus {
-  outline-color: gold;
+  outline-color: var(--accent);
 }
 
 textarea {
@@ -63,17 +63,17 @@ textarea {
 #contactme a {
   margin-left: 20px;
   display: inline-block;
-  background-color: #4b4949;
+  background-color: var(--background);
   border-radius: 25%;
   transition: border-color 0.3s ease, transform 0.3s ease;
-  box-shadow: 0px 0px 0px 2px gold;
+  box-shadow: 0px 0px 0px 2px var(--accent);
   transform: scale(1);
 }
 
 #contactme a:hover,
 #contactme a:focus {
-  border-color: gold;
-  box-shadow: 0px 0px 6px 3px gold;
+  border-color: var(--accent);
+  box-shadow: 0px 0px 6px 3px var(--accent);
   transform: scale(1.1);
 }
 
