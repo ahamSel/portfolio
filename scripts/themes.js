@@ -51,8 +51,10 @@ function setTheme(themeName) {
 }
 
 // Initialize theme and selected state
-const savedTheme = localStorage.getItem('selectedTheme') || 'original';
-setTheme(savedTheme);
+document.addEventListener('DOMContentLoaded', function() {
+    const savedTheme = localStorage.getItem('selectedTheme') || 'original';
+    setTheme(savedTheme);
+});
 
 function toggleThemeMenu() {
     const menu = document.querySelector('.theme-menu');
