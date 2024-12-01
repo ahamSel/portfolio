@@ -1,3 +1,23 @@
+(function() {
+    const savedTheme = localStorage.getItem('selectedTheme') || 'original';
+    const theme = themes[savedTheme];
+    
+    // Create and inject a style element
+    const style = document.createElement('style');
+    style.textContent = `
+        :root {
+            --background: ${theme ? theme.background : themes.original.background};
+            --background-rgb: ${theme ? theme.backgroundRGB : themes.original.backgroundRGB};
+            --gradient1: ${theme ? theme.backgroundGradient1 : themes.original.backgroundGradient1};
+            --gradient2: ${theme ? theme.backgroundGradient2 : themes.original.backgroundGradient2};
+            --text: ${theme ? theme.text : themes.original.text};
+            --accent: ${theme ? theme.accent : themes.original.accent};
+            --tree-lines: ${theme ? theme.treeLines : themes.original.treeLines};
+        }
+    `;
+    document.head.appendChild(style);
+})();
+
 const themes = {
     nightOwl: {
         background: '#011627',
