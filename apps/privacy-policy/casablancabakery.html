@@ -94,9 +94,9 @@
 
         <h3>What this policy covers (summary)</h3>
         <ul>
-          <li>We collect basic account info (name, email, optional phone), order details, and <strong>limited payment metadata</strong> (card brand, last four, expiry) for UI display.</li>
+          <li>We collect basic account info (name – required, email – required, optional phone), order details, and <strong>limited payment metadata</strong> (card brand, last four, expiry) for UI display.</li>
           <li><strong>We do not store full card numbers</strong>; Square processes payments.</li>
-          <li>Push notifications are optional; you can turn them off anytime.</li>
+          <li>Push notifications are optional and used for order status updates.</li>
           <li>We don’t sell your data. We share it only with service providers (e.g., Square, Supabase).</li>
           <li>Data may be stored/processed in the <strong>United States (Supabase us-east-1)</strong> and other regions where our providers operate.</li>
           <li>You can <strong>request account deletion</strong>; we may retain order/payment records as required by law.</li>
@@ -105,14 +105,14 @@
         <h3>Information we collect</h3>
         <h3>You provide</h3>
         <ul>
-          <li><strong>Account details (optional for ordering):</strong> name (required on signup), email, optional phone.</li>
+          <li><strong>Account details:</strong> name (required), email (required), phone (optional).</li>
           <li><strong>Order details:</strong> items ordered, special instructions, pickup date/time.</li>
           <li><strong>Support messages:</strong> if you email us.</li>
         </ul>
 
         <h3>Automatically (minimal)</h3>
         <ul>
-          <li><strong>Push token (FCM)</strong> if you opt in to notifications (order status; promotions may be added later).</li>
+          <li><strong>Push token (FCM)</strong> if you opt in to notifications (order status updates).</li>
           <li><strong>Standard server logs</strong> (e.g., IP address) may be recorded by hosting/payment providers for security/fraud.</li>
           <li><strong>No precise location</strong> is collected. The app only shows the store’s address.</li>
         </ul>
@@ -135,15 +135,12 @@
             <li><strong>Supabase</strong> (auth/database; region us-east-1)</li>
             <li><strong>Square</strong> (payments; incl. Google Pay/Apple Pay via Square)</li>
             <li><strong>Google/Apple</strong> (Sign-In; Google also for FCM push)</li>
+            <li><strong>Email delivery provider</strong> (transactional emails)</li>
           </ul>
         </p>
 
         <h3>Push notifications &amp; permissions</h3>
-        <ul>
-          <li><strong>POST_NOTIFICATIONS (Android):</strong> requested at app start; used for order status (and possibly promotions later).</li>
-          <li>You can <strong>disable notifications</strong> in device settings at any time.</li>
-          <li><em>No other sensitive device permissions are used.</em></li>
-        </ul>
+        <p>We request notification permission on Android (POST_NOTIFICATIONS). Notifications are optional and used for order-status updates. You can disable them in device settings anytime.</p>
 
         <h3>Data retention</h3>
         <ul>
@@ -166,6 +163,7 @@
           <li><strong>Access/Correction:</strong> contact us.</li>
           <li><strong>Deletion:</strong> email us to request deletion; some records may be retained as required by law.</li>
           <li><strong>Notifications:</strong> turn off in device settings.</li>
+          <li><strong>Account deletion:</strong> see our dedicated page at <a href="../account-deletion/casablancabakery.html">Account Deletion</a>.</li>
         </ul>
 
         <h3>Account deletion</h3>
