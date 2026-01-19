@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../../styles/style.css" />
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="../../assets/images/title_icon.ico"
+    />
+    <title>PropertyCopy AI - Support - ahamSel</title>
+    <script defer src="../../scripts/themes.js"></script>
+    <style>
+      .app-header {
+        text-align: center;
+        margin-bottom: 60px;
+      }
+      .app-header h1 {
+        font-size: 50px;
+        margin-bottom: 15px;
+      }
+      .app-header p {
+        font-size: 1.3rem;
+        max-width: 700px;
+        margin: 0 auto;
+      }
+      .app-section {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 30px;
+        background-color: rgba(255, 255, 255, 0.1);
+        border-radius: 10px;
+        margin-top: 30px;
+        line-height: 1.7;
+      }
+      .app-section h2 {
+        margin-top: 25px;
+        font-size: 28px;
+        text-align: center;
+        color: var(--accent);
+      }
+      .app-section h3 {
+        margin-top: 25px;
+        font-size: 20px;
+        color: var(--accent);
+        font-weight: bold;
+      }
+      .app-section p {
+        margin-bottom: 15px;
+        font-size: 17px;
+      }
+      .contact-section {
+        text-align: center;
+        margin-bottom: 40px;
+      }
+      .contact-btn {
+        display: inline-block;
+        margin-top: 15px;
+        padding: 20px;
+        font-size: 20px;
+        background-color: var(--background);
+        border: 2px solid var(--accent);
+        color: var(--text);
+        border-radius: 20px;
+        text-decoration: none;
+        box-shadow: 1px 1px 10px 10px rgba(0, 0, 0, 0.1);
+        transition: 300ms;
+        background-image: none;
+      }
+      .contact-btn:hover {
+        font-weight: bold;
+        background-color: var(--accent);
+        color: var(--background);
+      }
+      .faq-item {
+        margin-bottom: 25px;
+        padding-bottom: 15px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      }
+      .faq-item:last-child {
+        border-bottom: none;
+      }
+      .date-info {
+        text-align: center;
+        margin-top: 10px;
+        font-size: 1rem;
+      }
+      body {
+        padding-top: 0px;
+      }
+      @media screen and (max-width: 600px) {
+        .app-header h1 {
+          font-size: 35px;
+        }
+        .app-header {
+          margin-bottom: 40px;
+        }
+        body {
+          padding-top: 5px;
+        }
+        .theme-toggle {
+          bottom: 20px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="app-header">
+      <img src="../../assets/images/propertycopy_logo.png" alt="PropertyCopy AI Logo" width="120" height="120" style="border-radius: 20px; margin-bottom: 20px; margin-top: 100px;">
+      <h1>PropertyCopy AI Support</h1>
+    </div>
+
+    <div class="app-section">
+      <div class="contact-section">
+        <h2>Contact Us</h2>
+        <p>Need help with a listing or have a question? We're here to help.</p>
+        <a href="mailto:ahamconcerns@gmail.com" class="contact-btn">Email Support</a>
+      </div>
+
+      <h2>How It Works</h2>
+      <div class="faq-item">
+        <h3>1. Create</h3>
+        <p>Tap 'Create Property' and upload your property photos.</p>
+      </div>
+      <div class="faq-item">
+        <h3>2. Analyze</h3>
+        <p>Our AI instantly analyzes architectural details and room features.</p>
+      </div>
+      <div class="faq-item">
+        <h3>3. Generate</h3>
+        <p>Receive professional MLS descriptions and social posts ready to copy.</p>
+      </div>
+
+      <h2>Tips for Best Results</h2>
+      <ul>
+        <li>Use well-lit, high-resolution images for best accuracy.</li>
+        <li>Include key areas like kitchens, master baths, and unique amenities.</li>
+        <li>Capture wide angles to help the AI understand the flow of the home.</li>
+      </ul>
+      <br>
+
+      <h2>Privacy & Security</h2>
+      <p>Your privacy is paramount. All property photos and generated data are encrypted and processed securely. We never share your client's property details with third parties.</p>
+      <br>
+
+      <h2>Frequently Asked Questions</h2>
+
+      <div class="faq-item">
+        <h3>How do I restore my purchase?</h3>
+        <p>Go to <strong>Settings > Subscription > Restore Purchases</strong>. This will re-sync your device with the App Store to recognize any previous purchases.</p>
+      </div>
+
+      <div class="faq-item">
+        <h3>How do I delete my account?</h3>
+        <p>Go to <strong>Settings > Delete Account</strong>. Please note that this action is immediate and permanent. All your data will be erased.</p>
+      </div>
+
+      <div class="faq-item">
+        <h3>Why did my generation fail?</h3>
+        <p>Ensure you have a stable internet connection and are uploading clear photos. If the issue persists, please contact us for assistance.</p>
+      </div>
+
+      <div class="faq-item">
+        <h3>Where can I manage my subscription?</h3>
+        <p>Subscriptions are managed directly through your Apple ID settings. You can view, cancel, or change your subscription in the App Store app under your account.</p>
+      </div>
+    </div>
+
+    <div class="theme-toggle">
+      <button class="theme-toggle-btn" onclick="toggleThemeMenu()">
+        <span class="theme-icon">🎨</span>
+      </button>
+      <div class="theme-menu">
+        <button onclick="setTheme('original')" class="theme-btn">
+          Original
+        </button>
+        <button onclick="setTheme('nightOwl')" class="theme-btn">
+          Night Owl
+        </button>
+        <button onclick="setTheme('light')" class="theme-btn">Light</button>
+      </div>
+    </div>
+
+    <script src="../../scripts/nav.js" defer></script>
+  </body>
+</html>
