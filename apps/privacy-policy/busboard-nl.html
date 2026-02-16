@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../../styles/style.css" />
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="../../assets/images/title_icon.ico"
+    />
+    <title>BusBoard NL - Privacy Policy - ahamSel</title>
+    <script defer src="../../scripts/themes.js"></script>
+    <style>
+      .app-header {
+        text-align: center;
+        margin-bottom: 60px;
+      }
+      .app-header h1 {
+        font-size: 50px;
+        margin-bottom: 15px;
+      }
+      .app-header p {
+        font-size: 1.3rem;
+        max-width: 700px;
+        margin: 0 auto;
+      }
+      .app-section {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 30px;
+        background-color: rgba(255, 255, 255, 0.1);
+        border-radius: 10px;
+        margin-top: 30px;
+        line-height: 1.7;
+      }
+      .app-section h2 {
+        margin-top: 25px;
+        font-size: 28px;
+        text-align: center;
+        color: var(--accent);
+      }
+      .app-section h3 {
+        margin-top: 25px;
+        font-size: 20px;
+        color: var(--accent);
+        font-weight: bold;
+      }
+      .app-section p,
+      .app-section li {
+        margin-bottom: 15px;
+        font-size: 17px;
+      }
+      .app-section ul {
+        list-style-type: disc;
+        padding-left: 2em;
+      }
+      .date-info {
+        text-align: center;
+        margin-top: 10px;
+        font-size: 1rem;
+      }
+      body {
+        padding-top: 0px;
+      }
+      @media screen and (max-width: 600px) {
+        .app-header h1 {
+          font-size: 35px;
+        }
+        .app-header {
+          margin-bottom: 40px;
+        }
+        body {
+          padding-top: 5px;
+        }
+        .theme-toggle {
+          bottom: 20px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="app-header">
+      <img src="../../assets/images/busboard_logo.png" alt="BusBoard NL Logo" width="120" height="120" style="border-radius: 20px; margin-bottom: 20px; margin-top: 100px;">
+      <h1>BusBoard NL Privacy Policy</h1>
+    </div>
+
+    <div class="app-section">
+      <div class="date-info">
+        <span>Effective Date: February 15, 2026</span>
+      </div>
+
+      <h2>Introduction</h2>
+      <p>
+        Welcome to BusBoard NL. We are committed to protecting your privacy. This Privacy Policy explains our data practices regarding collection, use, and disclosure in relation to the BusBoard NL mobile application.
+      </p>
+
+      <h2>Data Collection</h2>
+      <p>We prioritize user privacy and collect minimal data:</p>
+      <ul>
+        <li>
+          <strong>Location Data</strong>: BusBoard NL requests access to your device location to identify nearby bus stops and show your position on the map. This data is processed locally on your device and is <strong>not</strong> transmitted to or stored on our servers.
+        </li>
+        <li>
+          <strong>Usage Data</strong>: We do not collect identifiable usage data or track your movement history.
+        </li>
+      </ul>
+
+      <h2>Data Usage</h2>
+      <p>Any data accessed by the app is used solely for the following purposes:</p>
+      <ul>
+        <li>To display relevant transit information based on your current location.</li>
+        <li>To sort bus stops by distance from you.</li>
+      </ul>
+
+      <h2>Third-Party Services</h2>
+      <p>We utilize trusted third-party services to provide transit data:</p>
+      <ul>
+        <li>
+          <strong>Metrobus Transit</strong>: We retrieve public transit schedules and real-time vehicle positions from the Metrobus Open Data API.
+        </li>
+        <li>
+          <strong>MapLibre / OpenFreeMap</strong>: We use these services to render the map interface.
+        </li>
+      </ul>
+
+      <h2>Children's Privacy</h2>
+      <p>
+        Our service is suitable for general audiences. We do not knowingly collect personal information from children or any users.
+      </p>
+
+      <h2>Changes to This Policy</h2>
+      <p>
+        We may update our Privacy Policy from time to time. You are advised to review this page periodically for any changes.
+      </p>
+
+      <h2>Contact Us</h2>
+      <p>
+        If you have any questions about this Privacy Policy, please contact us at <a href="mailto:ahamconcerns@gmail.com" style="color: var(--accent);">ahamconcerns@gmail.com</a>.
+      </p>
+    </div>
+
+    <div class="theme-toggle">
+      <button class="theme-toggle-btn" onclick="toggleThemeMenu()">
+        <span class="theme-icon">🎨</span>
+      </button>
+      <div class="theme-menu">
+        <button onclick="setTheme('original')" class="theme-btn">
+          Original
+        </button>
+        <button onclick="setTheme('nightOwl')" class="theme-btn">
+          Night Owl
+        </button>
+        <button onclick="setTheme('light')" class="theme-btn">Light</button>
+      </div>
+    </div>
+
+    <script src="../../scripts/nav.js" defer></script>
+  </body>
+</html>

@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../../styles/style.css" />
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="../../assets/images/title_icon.ico"
+    />
+    <title>BusBoard NL - Support - ahamSel</title>
+    <script defer src="../../scripts/themes.js"></script>
+    <style>
+      .app-header {
+        text-align: center;
+        margin-bottom: 60px;
+      }
+      .app-header h1 {
+        font-size: 50px;
+        margin-bottom: 15px;
+      }
+      .app-header p {
+        font-size: 1.3rem;
+        max-width: 700px;
+        margin: 0 auto;
+      }
+      .app-section {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 30px;
+        background-color: rgba(255, 255, 255, 0.1);
+        border-radius: 10px;
+        margin-top: 30px;
+        line-height: 1.7;
+      }
+      .app-section h2 {
+        margin-top: 25px;
+        font-size: 28px;
+        text-align: center;
+        color: var(--accent);
+      }
+      .app-section h3 {
+        margin-top: 25px;
+        font-size: 20px;
+        color: var(--accent);
+        font-weight: bold;
+      }
+      .app-section p {
+        margin-bottom: 15px;
+        font-size: 17px;
+      }
+      .contact-section {
+        text-align: center;
+        margin-bottom: 40px;
+      }
+      .contact-btn {
+        display: inline-block;
+        margin-top: 15px;
+        padding: 20px;
+        font-size: 20px;
+        background-color: var(--background);
+        border: 2px solid var(--accent);
+        color: var(--text);
+        border-radius: 20px;
+        text-decoration: none;
+        box-shadow: 1px 1px 10px 10px rgba(0, 0, 0, 0.1);
+        transition: 300ms;
+        background-image: none;
+      }
+      .contact-btn:hover {
+        font-weight: bold;
+        background-color: var(--accent);
+        color: var(--background);
+      }
+      .faq-item {
+        margin-bottom: 25px;
+        padding-bottom: 15px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      }
+      .faq-item:last-child {
+        border-bottom: none;
+      }
+      .date-info {
+        text-align: center;
+        margin-top: 10px;
+        font-size: 1rem;
+      }
+      body {
+        padding-top: 0px;
+      }
+      @media screen and (max-width: 600px) {
+        .app-header h1 {
+          font-size: 35px;
+        }
+        .app-header {
+          margin-bottom: 40px;
+        }
+        body {
+          padding-top: 5px;
+        }
+        .theme-toggle {
+          bottom: 20px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="app-header">
+      <img src="../../assets/images/busboard_logo.png" alt="BusBoard NL Logo" width="120" height="120" style="border-radius: 20px; margin-bottom: 20px; margin-top: 100px;">
+      <h1>BusBoard NL Support</h1>
+    </div>
+
+    <div class="app-section">
+      <div class="contact-section">
+        <h2>Contact Us</h2>
+        <p>Found a bug or have a suggestion? We'd love to hear from you.</p>
+        <a href="mailto:ahamconcerns@gmail.com" class="contact-btn">Email Support</a>
+      </div>
+
+      <h2>How It Works</h2>
+      <div class="faq-item">
+        <h3>1. Find Nearby Stops</h3>
+        <p>Open the app to instantly see stops near your current location.</p>
+      </div>
+      <div class="faq-item">
+        <h3>2. Live Tracking</h3>
+        <p>Watch buses move in real-time on the map to see exactly where your ride is.</p>
+      </div>
+      <div class="faq-item">
+        <h3>3. Arrival Boards</h3>
+        <p>Tap any stop to view live countdown times for upcoming buses.</p>
+      </div>
+
+      <h2>Tips for Best Experience</h2>
+      <ul>
+        <li>Enable location services to use the "Near Me" feature effectively.</li>
+        <li>Tap the "Filter" icon on the map to show only specific bus routes.</li>
+        <li>Select a stop to focus the map and see detailed arrival info.</li>
+      </ul>
+      <br>
+
+      <h2>Privacy & Security</h2>
+      <p>We respect your privacy. Location data is used only to show you relevant transit info and is never stored on our servers. We do not track your movement history.</p>
+      <br>
+
+      <h2>Frequently Asked Questions</h2>
+
+      <div class="faq-item">
+        <h3>Why is a bus missing from the map?</h3>
+        <p>BusBoard NL relies on data from Metrobus. Occasionally, a bus's GPS tracker may be offline or the data feed may be delayed. In these cases, scheduled times are shown instead.</p>
+      </div>
+
+      <div class="faq-item">
+        <h3>Is this the official Metrobus app?</h3>
+        <p>No, BusBoard NL is an independent app created to provide a modern, fast tracking experience. We are not affiliated with Metrobus Transit.</p>
+      </div>
+
+      <div class="faq-item">
+        <h3>How do I switch to Dark Mode?</h3>
+        <p>The app automatically matches your device's system theme. Switch your phone to Dark Mode, and BusBoard NL will follow suit.</p>
+      </div>
+    </div>
+
+    <div class="theme-toggle">
+      <button class="theme-toggle-btn" onclick="toggleThemeMenu()">
+        <span class="theme-icon">🎨</span>
+      </button>
+      <div class="theme-menu">
+        <button onclick="setTheme('original')" class="theme-btn">
+          Original
+        </button>
+        <button onclick="setTheme('nightOwl')" class="theme-btn">
+          Night Owl
+        </button>
+        <button onclick="setTheme('light')" class="theme-btn">Light</button>
+      </div>
+    </div>
+
+    <script src="../../scripts/nav.js" defer></script>
+  </body>
+</html>
