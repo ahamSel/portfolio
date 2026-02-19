@@ -1,5 +1,17 @@
 const projects = [
   {
+    title: "BusBoard NL [Dart, Flutter]",
+    description: `is a mobile app that delivers real-time Metrobus departures for St. John's, Mount Pearl & Paradise. It combines Metrobus's public GTFS schedule with live vehicle tracking to show predicted arrival times for any stop, just like the departure boards at MUN Centre. Features an interactive map with live bus positions, powered by Kalman-filtered motion tracking. <a href="https://ahamsel.com/busboard" target="_blank">Get the app →</a>`,
+    githubLink: "https://ahamsel.com/busboard",
+    videoPoster: "../assets/images/busboard-nl_poster.jpg",
+    videoSources: [
+      { src: "../assets/videos/busboard-nl.webm", type: "video/webm" },
+      { src: "../assets/videos/busboard-nl.mp4", type: "video/mp4" }
+    ],
+    width: "324px",
+    height: "697px"
+  },
+  {
     title: "Financial Insight [TypeScript, React, Python, Flask]",
     description: `is a full-stack web application that offers personalized financial insights and budgeting tips. It analyzes user-input data on expenses, income, and wishlist costs to provide smart, AI-driven recommendations for better financial planning. The backend, built with Flask, operates as a RESTful API, processing requests from the frontend and displaying the results to the user. <a href="https://ahamsel.github.io/financial_insight" target='_blank'>Try it out!</a>`,
     githubLink: "https://github.com/ahamSel/financial_insight",
