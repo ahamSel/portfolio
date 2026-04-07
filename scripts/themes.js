@@ -6,6 +6,7 @@ const themes = {
         backgroundGradient2: '#0b1f2c',
         text: '#d6deeb',
         accent: '#7fdbca',
+        accentRGB: '127, 219, 202',
         treeLines: '#82aaff'
     },
     original: {
@@ -15,6 +16,7 @@ const themes = {
         backgroundGradient2: '#404040',
         text: 'white',
         accent: 'gold',
+        accentRGB: '255, 215, 0',
         treeLines: '#ccc'
     },
     light: {
@@ -24,6 +26,7 @@ const themes = {
         backgroundGradient2: '#e0e0e0',
         text: '#2d2d2d',
         accent: '#2196f3',
+        accentRGB: '33, 150, 243',
         treeLines: '#757575'
     }
 };
@@ -42,6 +45,7 @@ const themes = {
             --gradient2: ${theme ? theme.backgroundGradient2 : themes.original.backgroundGradient2};
             --text: ${theme ? theme.text : themes.original.text};
             --accent: ${theme ? theme.accent : themes.original.accent};
+            --accent-rgb: ${theme ? theme.accentRGB : themes.original.accentRGB};
             --tree-lines: ${theme ? theme.treeLines : themes.original.treeLines};
         }
     `;
@@ -56,6 +60,7 @@ function setTheme(themeName) {
     document.documentElement.style.setProperty('--gradient2', theme.backgroundGradient2);
     document.documentElement.style.setProperty('--text', theme.text);
     document.documentElement.style.setProperty('--accent', theme.accent);
+    document.documentElement.style.setProperty('--accent-rgb', theme.accentRGB);
     document.documentElement.style.setProperty('--tree-lines', theme.treeLines);
 
     // Update selected theme visual

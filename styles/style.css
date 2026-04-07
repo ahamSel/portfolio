@@ -16,28 +16,34 @@ html {
   --gradient2: "";
   --text: "";
   --accent: "";
+  --accent-rgb: "";
   --tree-lines: "";
 }
 
 body {
   line-height: 1.75;
   background-color: var(--background);
-  background-image: radial-gradient(circle, var(--gradient1) 10%, transparent 10%), radial-gradient(circle, var(--gradient2) 10%, transparent 10%);
-  background-position: 0 0, 25px 25px, 50px 50px, 75px 75px;
-  background-size: 100px 100px;
+  background-image: radial-gradient(circle at 15% 20%, rgba(var(--accent-rgb), 0.18), transparent 32rem), radial-gradient(circle at 85% 10%, var(--gradient1), transparent 28rem), radial-gradient(circle at 60% 85%, var(--gradient2), transparent 30rem), linear-gradient(135deg, var(--background), var(--background));
+  background-position: 0% 0%, 100% 0%, 50% 100%, 0% 0%;
+  background-size: 150% 150%, 140% 140%, 160% 160%, 100% 100%;
   background-attachment: fixed;
-  animation: moveBackground 10s linear infinite;
+  animation: ambientBackground 28s ease-in-out infinite alternate;
   color: var(--text);
   font-size: 17px;
   padding-top: 40px;
 }
 
-@keyframes moveBackground {
+@keyframes ambientBackground {
   0% {
-    background-position: 0 0;
+    background-position: 0% 0%, 100% 0%, 50% 100%, 0% 0%;
   }
   100% {
-    background-position: 100px 100px;
+    background-position: 18% 12%, 82% 18%, 45% 85%, 0% 0%;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  body {
+    animation: none;
   }
 }
 ul {
