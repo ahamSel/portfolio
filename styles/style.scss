@@ -24,10 +24,20 @@ html {
 body {
   line-height: 1.75;
   background-color: var(--background);
+  color: var(--text);
+  font-size: 17px;
+  padding-top: 40px;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: -20%;
+  z-index: -1;
   background-image:
-    radial-gradient(circle at 15% 20%, rgba(var(--accent-rgb), 0.18), transparent 32rem),
-    radial-gradient(circle at 85% 10%, var(--gradient1), transparent 28rem),
-    radial-gradient(circle at 60% 85%, var(--gradient2), transparent 30rem),
+    radial-gradient(circle at 18% 24%, rgba(var(--accent-rgb), 0.3), transparent 32%),
+    radial-gradient(circle at 78% 16%, var(--gradient1), transparent 30%),
+    radial-gradient(circle at 52% 86%, var(--gradient2), transparent 34%),
     linear-gradient(135deg, var(--background), var(--background));
   background-position:
     0% 0%,
@@ -39,11 +49,10 @@ body {
     140% 140%,
     160% 160%,
     100% 100%;
-  background-attachment: fixed;
-  animation: ambientBackground 28s ease-in-out infinite alternate;
-  color: var(--text);
-  font-size: 17px;
-  padding-top: 40px;
+  opacity: 0.85;
+  pointer-events: none;
+  animation: ambientBackground 24s ease-in-out infinite;
+  will-change: filter, transform, background-position;
 }
 
 @keyframes ambientBackground {
@@ -53,19 +62,33 @@ body {
       100% 0%,
       50% 100%,
       0% 0%;
+    filter: hue-rotate(0deg) saturate(105%);
+    transform: scale(1);
+  }
+
+  50% {
+    background-position:
+      36% 18%,
+      52% 28%,
+      64% 58%,
+      0% 0%;
+    filter: hue-rotate(18deg) saturate(118%);
+    transform: scale(1.08);
   }
 
   100% {
     background-position:
-      18% 12%,
-      82% 18%,
-      45% 85%,
+      72% 34%,
+      12% 58%,
+      38% 24%,
       0% 0%;
+    filter: hue-rotate(-12deg) saturate(112%);
+    transform: scale(1.03);
   }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  body {
+  body::before {
     animation: none;
   }
 }
