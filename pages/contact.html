@@ -30,81 +30,155 @@
       <a href="./about">About</a>
       <a href="./projects">Projects</a>
       <a href="./contact">Contact</a>
+      <a href="#resume-request">Resume</a>
     </nav>
 
-    <h1 id="contactme">
-      Get in touch!<a
-        href="https://www.linkedin.com/in/aaesselmouni/"
-        target="_blank"
-      >
-        <img
-          src="../assets/images/linkedin.png"
-          alt="LinkedIn"
-          width="30"
-          height="30"
-        />
-      </a>
-    </h1>
+    <main class="page-shell">
+      <section class="hero-card contact-hero">
+        <p class="eyebrow">Contact</p>
+        <h1 id="contactme">Let's talk.</h1>
+        <p class="hero-lede">
+          Send a note about a project, collaboration, or resume request. If
+          you'd like the resume, leave your email and I can follow up directly.
+        </p>
+        <a
+          class="button-link"
+          href="https://www.linkedin.com/in/aaesselmouni/"
+          target="_blank"
+          rel="noopener"
+          >LinkedIn</a
+        >
+      </section>
 
-    <form
-      id="contactForm"
-      action="https://formsubmit.co/b4ea46c88a0c7b732ba84144c7b3275b"
-      method="post"
-    >
-      <ul>
-        <li>
-          <label for="name">Name:</label>
+      <section class="form-grid" aria-label="Contact forms">
+        <form
+          id="contactForm"
+          class="contact-card"
+          action="https://formsubmit.co/b4ea46c88a0c7b732ba84144c7b3275b"
+          method="post"
+          data-enhanced-submit
+        >
+          <div class="form-intro">
+            <p class="eyebrow">General inquiry</p>
+            <h2>Send a message</h2>
+            <p>Use this for project ideas, questions, or a quick hello.</p>
+          </div>
+          <ul>
+            <li>
+              <label for="name">Name</label>
+              <input
+                type="text"
+                name="their_name"
+                id="name"
+                placeholder="Optional"
+              />
+            </li>
+            <li>
+              <label for="email">Email</label>
+              <input
+                type="email"
+                name="their_email"
+                id="email"
+                placeholder="Optional"
+              />
+            </li>
+            <li>
+              <label for="phone">Phone number</label>
+              <input
+                type="tel"
+                name="their_phone"
+                id="phone"
+                placeholder="Optional"
+              />
+            </li>
+            <li>
+              <label for="message">Message</label>
+              <textarea
+                name="their_message"
+                id="message"
+                cols="30"
+                rows="10"
+                placeholder="Hi Ahmed..."
+                required
+              ></textarea>
+            </li>
+            <li>
+              <button type="submit">Send message</button>
+            </li>
+          </ul>
+          <input type="text" name="_honey" style="display: none" />
+          <input type="hidden" name="_captcha" value="false" />
+          <input type="hidden" name="_subject" value="Portfolio contact" />
           <input
-            type="text"
-            name="their_name"
-            id="name"
-            placeholder="(optional)"
+            type="hidden"
+            name="_next"
+            value="https://ahamsel.com/pages/thankyou"
           />
-        </li>
-        <li>
-          <label for="email">E-mail:</label>
+        </form>
+
+        <form
+          id="resumeRequestForm"
+          class="contact-card featured-card"
+          action="https://formsubmit.co/b4ea46c88a0c7b732ba84144c7b3275b"
+          method="post"
+          data-enhanced-submit
+        >
+          <div class="form-intro">
+            <p class="eyebrow">Resume</p>
+            <h2 id="resume-request">Get the details</h2>
+            <p>
+              Interested in the more complete background? Share your email and
+              a short note, and I can send the PDF directly.
+            </p>
+          </div>
+          <ul>
+            <li>
+              <label for="resume-name">Name</label>
+              <input
+                type="text"
+                name="requester_name"
+                id="resume-name"
+                placeholder="Your name"
+                required
+              />
+            </li>
+            <li>
+              <label for="resume-email">Email</label>
+              <input
+                type="email"
+                name="email"
+                id="resume-email"
+                placeholder="you@example.com"
+                required
+              />
+            </li>
+            <li>
+              <label for="resume-context">Context</label>
+              <textarea
+                name="request_context"
+                id="resume-context"
+                cols="30"
+                rows="8"
+                placeholder="What are you interested in?"
+                required
+              ></textarea>
+            </li>
+            <li>
+              <button type="submit">Request by email</button>
+            </li>
+          </ul>
+          <input type="text" name="_honey" style="display: none" />
+          <input type="hidden" name="_captcha" value="false" />
+          <input type="hidden" name="_subject" value="Resume request" />
+          <input type="hidden" name="request_type" value="resume_request" />
           <input
-            type="email"
-            name="their_email"
-            id="email"
-            placeholder="(optional)"
+            type="hidden"
+            name="_next"
+            value="https://ahamsel.com/pages/thankyou"
           />
-        </li>
-        <li>
-          <label for="phone">Phone number:</label>
-          <input
-            type="tel"
-            name="their_phone"
-            id="phone"
-            placeholder="(optional)"
-          />
-        </li>
-        <li>
-          <label for="message">Message:</label>
-          <textarea
-            name="their_message"
-            id="message"
-            cols="30"
-            rows="10"
-            placeholder="Hi there!"
-            required
-          ></textarea>
-        </li>
-        <li style="text-align: center">
-          <button type="submit">Send message</button>
-        </li>
-      </ul>
-      <!-- to avoid spam -->
-      <input type="text" name="_honey" style="display: none" />
-      <!-- disables reCAPTCHA -->
-      <input type="hidden" name="_captcha" value="false" />
-      <!-- thank you page -->
-      <input
-        type="hidden"
-        name="_next"
-        value="https://ahamsel.com/pages/thankyou"
-      />
-    </form>
+        </form>
+      </section>
+    </main>
 
     <div class="theme-toggle">
       <button class="theme-toggle-btn" onclick="toggleThemeMenu()">

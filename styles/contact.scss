@@ -1,8 +1,6 @@
 form {
-  margin: 0 auto;
-  margin-top: -30px;
-  width: 90%;
-  max-width: 1000px;
+  margin: 0;
+  width: 100%;
 }
 
 form ul {
@@ -47,15 +45,41 @@ textarea {
   min-height: 13em;
 }
 
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px;
+  align-items: start;
+}
+
+.contact-card {
+  padding: clamp(22px, 3vw, 34px);
+}
+
+.featured-card {
+  border-color: var(--accent);
+}
+
+.form-intro {
+  margin-bottom: 24px;
+}
+
+.contact-card button {
+  width: 100%;
+  cursor: pointer;
+}
+
+#resume-request {
+  scroll-margin-top: 100px;
+}
+
 @media screen and (max-width: 600px) {
-  form {
-    margin-top: 40px;
-    width: calc(100% - 40px);
+  .form-grid {
+    grid-template-columns: 1fr;
   }
 
   input,
   textarea {
-    width: calc(100% - 20px);
     font-size: 16px;
   }
 }
