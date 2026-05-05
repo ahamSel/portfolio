@@ -1,5 +1,21 @@
 const featuredProjects = [
   {
+    title: "WebPilot",
+    stack: "TypeScript, Electron, Playwright MCP, LLM APIs, Ollama",
+    summary:
+      "An open-source desktop app for agentic browsing. It connects browser automation, model/provider selection, local Ollama models, browser/profile choices, and inspectable run history so users can see how an agent worked through a task.",
+    impact: "A current AI-agent product built around practical browser control and transparent execution traces.",
+    link: "https://github.com/ahamSel/WebPilot",
+    linkLabel: "View repo",
+    videoPoster: "../assets/images/webpilot_poster.jpg",
+    videoSources: [
+      { src: "../assets/videos/webpilot_vid.webm", type: "video/webm" },
+      { src: "../assets/videos/webpilot_vid.mp4", type: "video/mp4" }
+    ],
+    videoWidth: "672px",
+    videoHeight: "378px"
+  },
+  {
     title: "BusBoard NL",
     stack: "Dart, Flutter, GTFS, realtime transit data",
     summary:
