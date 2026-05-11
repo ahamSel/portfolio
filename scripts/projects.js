@@ -12,8 +12,8 @@ const featuredProjects = [
       { src: "../assets/videos/webpilot_vid.webm", type: "video/webm" },
       { src: "../assets/videos/webpilot_vid.mp4", type: "video/mp4" }
     ],
-    videoWidth: "672px",
-    videoHeight: "378px"
+    videoWidth: 2016,
+    videoHeight: 1134
   },
   {
     title: "BusBoard NL",
@@ -29,8 +29,8 @@ const featuredProjects = [
       { src: "../assets/videos/busboard-nl.webm", type: "video/webm" },
       { src: "../assets/videos/busboard-nl.mp4", type: "video/mp4" }
     ],
-    videoWidth: "324px",
-    videoHeight: "697px"
+    videoWidth: 1180,
+    videoHeight: 2556
   },
   {
     title: "PropertyCopy AI",
@@ -56,8 +56,8 @@ const featuredProjects = [
       { src: "../assets/videos/fin_insight_vid.webm", type: "video/webm" },
       { src: "../assets/videos/fin_insight_vid.mp4", type: "video/mp4" }
     ],
-    videoWidth: "600px",
-    videoHeight: "450px"
+    videoWidth: 1440,
+    videoHeight: 1080
   },
   {
     title: "Authentication and Data Patterns",
@@ -67,7 +67,8 @@ const featuredProjects = [
     impact: "Useful technical reference for product authentication and data flows.",
     link: "https://github.com/ahamSel/flutter_firebase_login_signup",
     linkLabel: "View repo",
-    image: "../assets/images/auth_db_poster.jpg"
+    image: "../assets/images/auth_db_poster.jpg",
+    imageClass: "media-phone"
   }
 ];
 
@@ -113,6 +114,7 @@ featuredProjects.forEach((project) => {
   } else if (project.image) {
     const image = document.createElement("img");
     image.src = project.image;
+    if (project.imageClass) image.classList.add(project.imageClass);
     image.alt = "";
     image.loading = "lazy";
     media.appendChild(image);
@@ -163,8 +165,10 @@ earlierProjects.forEach((project) => {
 function appendVideoToElement(element, project) {
   const video = document.createElement("video");
   video.className = "lazy";
-  video.setAttribute("width", project.videoWidth);
-  video.setAttribute("height", project.videoHeight);
+  if (project.videoWidth && project.videoHeight) {
+    video.width = project.videoWidth;
+    video.height = project.videoHeight;
+  }
   video.setAttribute("autoplay", "");
   video.setAttribute("muted", "");
   video.setAttribute("loop", "");
