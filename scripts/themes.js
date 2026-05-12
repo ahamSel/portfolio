@@ -10,14 +10,14 @@ const themes = {
         treeLines: '#82aaff'
     },
     original: {
-        background: '#4b4949',
-        backgroundRGB: '75, 73, 73',
-        backgroundGradient1: '#545454',
-        backgroundGradient2: '#404040',
+        background: '#141414',
+        backgroundRGB: '20, 20, 20',
+        backgroundGradient1: '#262626',
+        backgroundGradient2: '#0a0a0a',
         text: 'white',
         accent: 'gold',
         accentRGB: '255, 215, 0',
-        treeLines: '#ccc'
+        treeLines: '#aaa'
     },
     light: {
         background: '#ffffff',
@@ -34,8 +34,7 @@ const themes = {
 (function() {
     const savedTheme = localStorage.getItem('selectedTheme') || 'original';
     const theme = themes[savedTheme];
-    
-    // Create and inject a style element
+
     const style = document.createElement('style');
     style.textContent = `
         :root {
@@ -63,11 +62,9 @@ function setTheme(themeName) {
     document.documentElement.style.setProperty('--accent-rgb', theme.accentRGB);
     document.documentElement.style.setProperty('--tree-lines', theme.treeLines);
 
-    // Update selected theme visual
     document.querySelectorAll('.theme-btn').forEach(btn => {
         btn.classList.remove('selected');
-        const btnText = btn.textContent.trim().toLowerCase().replace(/\s+/g, '');
-        if (btnText === themeName.toLowerCase()) {
+        if (btn.dataset.theme === themeName) {
             btn.classList.add('selected');
         }
     });
@@ -75,21 +72,32 @@ function setTheme(themeName) {
     localStorage.setItem('selectedTheme', themeName);
 }
 
-// Initialize theme and selected state
 document.addEventListener('DOMContentLoaded', function() {
     const savedTheme = localStorage.getItem('selectedTheme') || 'original';
     setTheme(savedTheme);
+    const toggleBtn = document.querySelector('.theme-toggle-btn');
+    if (toggleBtn) {
+        toggleBtn.setAttribute('aria-expanded', 'false');
+    }
 });
 
 function toggleThemeMenu() {
     const menu = document.querySelector('.theme-menu');
+    const btn = document.querySelector('.theme-toggle-btn');
     menu.classList.toggle('show');
+    const isOpen = menu.classList.contains('show');
+    if (btn) {
+        btn.setAttribute('aria-expanded', isOpen);
+    }
 }
 
-// Close theme menu when clicking outside
 document.addEventListener('click', (e) => {
     const themeToggle = document.querySelector('.theme-toggle');
     if (!themeToggle.contains(e.target)) {
         document.querySelector('.theme-menu').classList.remove('show');
+        const btn = document.querySelector('.theme-toggle-btn');
+        if (btn) {
+            btn.setAttribute('aria-expanded', 'false');
+        }
     }
 });
