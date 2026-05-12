@@ -10,7 +10,7 @@
   gap: 28px;
   align-items: center;
   border: 1px solid var(--text);
-  background-color: rgba(var(--background-rgb), 0.9);
+  background-color: var(--background);
   border-radius: 24px;
   padding: clamp(22px, 4vw, 44px);
   box-shadow: 0 20px 60px rgba(0, 0, 0, 0.22);
