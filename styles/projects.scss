@@ -60,11 +60,22 @@
   object-fit: cover;
 }
 
+.project-media.has-video {
+  cursor: pointer;
+}
+
+.project-media.has-video:hover video,
+.project-media.has-video:focus-within video {
+  transform: scale(1.03);
+  box-shadow: 0 0 32px rgba(var(--accent-rgb), 0.65);
+}
+
 video {
   border-radius: 18px;
   display: block;
   border: 2px solid var(--accent);
   box-shadow: 0 0 18px rgba(var(--accent-rgb), 0.45);
+  transition: transform 300ms ease, box-shadow 300ms ease;
 }
 
 .archive-projects {

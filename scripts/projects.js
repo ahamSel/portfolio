@@ -111,6 +111,11 @@ featuredProjects.forEach((project) => {
 
   if (project.videoSources) {
     appendVideoToElement(media, project);
+    media.classList.add("has-video");
+    media.setAttribute("title", "Click to expand");
+    media.addEventListener("click", function () {
+      openVideoLightbox(project);
+    });
   } else if (project.image) {
     const image = document.createElement("img");
     image.src = project.image;
@@ -217,4 +222,74 @@ function hydrateVideo(video) {
   video.muted = true;
   video.play().catch((error) => console.error("Autoplay failed", error));
   video.classList.remove("lazy");
+}
+
+function openVideoLightbox(project) {
+  var existing = document.querySelector(".video-lightbox");
+  if (existing) existing.remove();
+
+  var overlay = document.createElement("div");
+  overlay.className = "video-lightbox";
+
+  var closeBtn = document.createElement("button");
+  closeBtn.className = "video-lightbox-close";
+  closeBtn.innerHTML = "&times;";
+  closeBtn.setAttribute("aria-label", "Close video");
+  closeBtn.addEventListener("click", function (e) {
+    e.stopPropagation();
+    closeVideoLightbox(overlay);
+  });
+
+  var video = document.createElement("video");
+  video.setAttribute("autoplay", "");
+  video.setAttribute("muted", "");
+  video.setAttribute("loop", "");
+  video.setAttribute("playsinline", "");
+  video.setAttribute("controls", "");
+  if (project.videoWidth && project.videoHeight) {
+    video.width = project.videoWidth;
+    video.height = project.videoHeight;
+  }
+
+  project.videoSources.forEach(function (sourceInfo) {
+    var source = document.createElement("source");
+    source.src = sourceInfo.src;
+    source.type = sourceInfo.type;
+    video.appendChild(source);
+  });
+
+  overlay.appendChild(closeBtn);
+  overlay.appendChild(video);
+  document.body.appendChild(overlay);
+
+  requestAnimationFrame(function () {
+    overlay.classList.add("active");
+  });
+
+  video.focus();
+
+  overlay.addEventListener("click", function (e) {
+    if (e.target === overlay) {
+      closeVideoLightbox(overlay);
+    }
+  });
+
+  document.addEventListener("keydown", handleLightboxEscape);
+  overlay._escapeHandler = handleLightboxEscape;
+}
+
+function handleLightboxEscape(e) {
+  if (e.key === "Escape") {
+    var overlay = document.querySelector(".video-lightbox");
+    if (overlay) closeVideoLightbox(overlay);
+  }
+}
+
+function closeVideoLightbox(overlay) {
+  overlay.classList.remove("active");
+  document.removeEventListener("keydown", overlay._escapeHandler);
+
+  setTimeout(function () {
+    if (overlay.parentNode) overlay.parentNode.removeChild(overlay);
+  }, 300);
 }

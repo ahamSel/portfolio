@@ -353,11 +353,22 @@ nav a:focus {
   object-fit: cover;
 }
 
+.project-media.has-video {
+  cursor: pointer;
+}
+
+.project-media.has-video:hover video,
+.project-media.has-video:focus-within video {
+  transform: scale(1.03);
+  box-shadow: 0 0 32px rgba(var(--accent-rgb), 0.65);
+}
+
 video {
   border-radius: 18px;
   display: block;
   border: 2px solid var(--accent);
   box-shadow: 0 0 18px rgba(var(--accent-rgb), 0.45);
+  transition: transform 300ms ease, box-shadow 300ms ease;
 }
 
 .archive-projects {
@@ -867,4 +878,63 @@ textarea {
     padding: 10px 14px;
     white-space: nowrap;
   }
-}/*# sourceMappingURL=style.css.map */
+}
+
+.video-lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 2000;
+  background: rgba(0, 0, 0, 0.85);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 300ms ease;
+  pointer-events: none;
+  padding: 24px;
+}
+
+.video-lightbox.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.video-lightbox video {
+  max-width: 90vw;
+  max-height: 85vh;
+  width: auto;
+  height: auto;
+  border-radius: 18px;
+  border: 2px solid var(--accent);
+  box-shadow: 0 0 60px rgba(var(--accent-rgb), 0.3);
+}
+
+.video-lightbox-close {
+  position: absolute;
+  top: 24px;
+  right: 24px;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 1px solid var(--text);
+  background: rgba(0, 0, 0, 0.7);
+  color: var(--text);
+  font-size: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background-color 300ms ease, transform 300ms ease;
+  z-index: 1;
+  margin: 0;
+  padding: 0;
+  box-shadow: none;
+}
+
+.video-lightbox-close:hover {
+  background: var(--accent);
+  color: var(--background);
+  transform: scale(1.1);
+}
+
+/*# sourceMappingURL=style.css.map */
