@@ -36,7 +36,7 @@ body::before {
   background-image: radial-gradient(circle at 18% 24%, rgba(var(--accent-rgb), 0.3), transparent 32%), radial-gradient(circle at 78% 16%, var(--gradient1), transparent 30%), radial-gradient(circle at 52% 86%, var(--gradient2), transparent 34%), linear-gradient(135deg, var(--background), var(--background));
   background-position: 0% 0%, 100% 0%, 50% 100%, 0% 0%;
   background-size: 150% 150%, 140% 140%, 160% 160%, 100% 100%;
-  opacity: 0.85;
+  opacity: 0.4;
   pointer-events: none;
   animation: ambientBackground 24s ease-in-out infinite;
   will-change: filter, transform, background-position;

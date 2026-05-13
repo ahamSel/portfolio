@@ -30,9 +30,9 @@
         canvas.style.height = height + 'px';
     }
 
-    var spacing = 52;
-    var baseRadius = 1.4;
-    var rippleRadius = 210;
+    var spacing = 32;
+    var baseRadius = 1.6;
+    var rippleRadius = 200;
     var isTouch = false;
 
     function draw() {
@@ -54,8 +54,8 @@
                 var x = i * spacing;
                 var y = j * spacing;
 
-                var wave = Math.sin(t * 0.6 + x * 0.007 + y * 0.009) * 0.15;
-                var alpha = 0.14 + wave;
+                var wave = Math.sin(t * 0.6 + x * 0.007 + y * 0.009) * 0.18;
+                var alpha = 0.18 + wave;
                 var r = baseRadius;
 
                 var dx = mouseX - x;
@@ -65,9 +65,9 @@
                 if (dist < rippleRadius) {
                     var pct = 1 - dist / rippleRadius;
                     var ease = pct * pct;
-                    r = baseRadius + baseRadius * 3 * ease;
-                    alpha = alpha + 0.35 * ease;
-                    if (alpha > 0.55) alpha = 0.55;
+                    r = baseRadius + baseRadius * 2.5 * ease;
+                    alpha = alpha + 0.3 * ease;
+                    if (alpha > 0.5) alpha = 0.5;
                 }
 
                 ctx.globalAlpha = alpha;
