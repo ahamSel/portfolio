@@ -13,6 +13,7 @@
     let dpr = 1;
     let rafId;
 
+    var bgRGB = '20, 20, 20';
     var accentRGB = '255, 215, 0';
     var isTouch = false;
     var zOff = Math.random() * 1000;
@@ -21,6 +22,11 @@
     function getAccent() {
         var v = getComputedStyle(document.documentElement).getPropertyValue('--accent-rgb').trim();
         return v || accentRGB;
+    }
+
+    function getBackground() {
+        var v = getComputedStyle(document.documentElement).getPropertyValue('--background-rgb').trim();
+        return v || bgRGB;
     }
 
     function resize() {
@@ -83,9 +89,9 @@
         ctx.save();
         ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
 
-        // Fade trails — lower alpha = longer trails
-        ctx.globalAlpha = 0.06;
-        ctx.fillStyle = 'rgb(' + accentRGB + ')';
+        // Fade old trails with background color
+        ctx.globalAlpha = 0.025;
+        ctx.fillStyle = 'rgb(' + bgRGB + ')';
         ctx.fillRect(0, 0, width, height);
         ctx.globalAlpha = 1;
 
@@ -146,8 +152,13 @@
     }
 
     function start() {
+        bgRGB = getBackground();
         accentRGB = getAccent();
         resize();
+        // Prime canvas with background color so no flicker
+        ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+        ctx.fillStyle = 'rgb(' + bgRGB + ')';
+        ctx.fillRect(0, 0, width, height);
         initParticles();
         draw();
     }
@@ -156,6 +167,7 @@
 
     window.addEventListener('resize', function() {
         resize();
+        bgRGB = getBackground();
         accentRGB = getAccent();
         initParticles();
     });
@@ -169,6 +181,7 @@
     document.addEventListener('touchstart', function() { isTouch = true; }, { once: true, passive: true });
 
     var observer = new MutationObserver(function() {
+        bgRGB = getBackground();
         accentRGB = getAccent();
     });
     observer.observe(document.documentElement, { attributes: true, attributeFilter: ['style'] });
