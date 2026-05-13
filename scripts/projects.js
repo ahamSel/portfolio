@@ -60,24 +60,29 @@ const featuredProjects = [
     videoHeight: 1080
   },
   {
-    title: "Authentication and Data Patterns",
-    stack: "Dart, Flutter, Firebase Auth, Firestore",
+    title: "Flutter Chat",
+    stack: "Dart, Flutter, Firebase, Push Notifications",
     summary:
-      "A focused implementation of app authentication flows, Google sign-in, account linking, email verification, password reset, and realtime database-backed profile updates.",
-    impact: "Useful technical reference for product authentication and data flows.",
-    link: "https://github.com/ahamSel/flutter_firebase_login_signup",
+      "A real-time mobile chat app exploring messaging data models, Firebase Firestore structure, media storage, and push notification delivery.",
+    impact: "End-to-end chat experience showing realtime data sync and notification patterns.",
+    link: "https://github.com/ahamSel/flutter_chat_app",
     linkLabel: "View repo",
-    image: "../assets/images/auth_db_poster.jpg",
-    imageClass: "media-phone"
+    videoPoster: "../assets/images/chat_poster.jpg",
+    videoSources: [
+      { src: "../assets/videos/chat_vid.webm", type: "video/webm" },
+      { src: "../assets/videos/chat_vid.mp4", type: "video/mp4" }
+    ],
+    videoWidth: 984,
+    videoHeight: 1080
   }
 ];
 
 const earlierProjects = [
   {
-    title: "Flutter Chat",
+    title: "Authentication and Data Patterns",
     description:
-      "Mobile chat app exploring messaging data models, Firebase storage, and push notifications.",
-    link: "https://github.com/ahamSel/flutter_chat_app"
+      "A focused implementation of app authentication flows, Google sign-in, account linking, email verification, password reset, and realtime database-backed profile updates.",
+    link: "https://github.com/ahamSel/flutter_firebase_login_signup"
   },
   {
     title: "World Times",
@@ -201,7 +206,7 @@ document.addEventListener("DOMContentLoaded", function () {
           lazyVideoObserver.unobserve(video.target);
         }
       });
-    });
+    }, { rootMargin: "200px" });
 
     lazyVideos.forEach(function (lazyVideo) {
       lazyVideoObserver.observe(lazyVideo);
