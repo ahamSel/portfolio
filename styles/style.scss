@@ -566,9 +566,9 @@ nav a:focus {
   width: 44px;
   height: 44px;
   border-radius: 50%;
-  border: 1px solid var(--text);
-  background: rgba(0, 0, 0, 0.7);
-  color: var(--text);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  background: #1a1a1a;
+  color: rgba(255, 255, 255, 0.85);
   font-size: 24px;
   display: flex;
   align-items: center;
