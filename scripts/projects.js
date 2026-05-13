@@ -116,11 +116,6 @@ featuredProjects.forEach((project) => {
 
   if (project.videoSources) {
     appendVideoToElement(media, project);
-    media.classList.add("has-video");
-    media.setAttribute("title", "Click to expand");
-    media.addEventListener("click", function () {
-      openVideoLightbox(project);
-    });
   } else if (project.image) {
     const image = document.createElement("img");
     image.src = project.image;
@@ -174,7 +169,7 @@ earlierProjects.forEach((project) => {
 
 function appendVideoToElement(element, project) {
   const video = document.createElement("video");
-  video.className = "lazy";
+  video.className = "lazy has-video";
   if (project.videoWidth && project.videoHeight) {
     video.width = project.videoWidth;
     video.height = project.videoHeight;
@@ -184,6 +179,11 @@ function appendVideoToElement(element, project) {
   video.setAttribute("loop", "");
   video.setAttribute("playsinline", "");
   video.setAttribute("poster", project.videoPoster);
+  video.setAttribute("title", "Click to expand");
+
+  video.addEventListener("click", function () {
+    openVideoLightbox(project);
+  });
 
   project.videoSources.forEach((sourceInfo) => {
     const source = document.createElement("source");

@@ -60,12 +60,12 @@
   object-fit: cover;
 }
 
-.project-media.has-video {
+video.has-video {
   cursor: pointer;
 }
 
-.project-media.has-video:hover video,
-.project-media.has-video:focus-within video {
+video.has-video:hover,
+video.has-video:focus {
   transform: scale(1.03);
   box-shadow: 0 0 32px rgba(var(--accent-rgb), 0.65);
 }
