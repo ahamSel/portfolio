@@ -169,6 +169,13 @@
         resize();
         bgRGB = getBackground();
         accentRGB = getAccent();
+        // Repaint after resize
+        ctx.save();
+        ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+        ctx.globalAlpha = 1;
+        ctx.fillStyle = 'rgb(' + bgRGB + ')';
+        ctx.fillRect(0, 0, width, height);
+        ctx.restore();
         initParticles();
     });
 
@@ -183,6 +190,14 @@
     var observer = new MutationObserver(function() {
         bgRGB = getBackground();
         accentRGB = getAccent();
+        // Flush old trails — repaint canvas with new background
+        ctx.save();
+        ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+        ctx.globalAlpha = 1;
+        ctx.fillStyle = 'rgb(' + bgRGB + ')';
+        ctx.fillRect(0, 0, width, height);
+        ctx.restore();
+        initParticles();
     });
     observer.observe(document.documentElement, { attributes: true, attributeFilter: ['style'] });
 
