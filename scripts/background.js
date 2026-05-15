@@ -7,26 +7,44 @@
     document.body.prepend(canvas);
 
     const ctx = canvas.getContext('2d');
-    let mouseX = -500;
-    let mouseY = -500;
+    let mouseX = -9999;
+    let mouseY = -9999;
     let width, height;
     let dpr = 1;
     let rafId;
+    let isTouch = false;
 
-    var bgRGB = '20, 20, 20';
-    var accentRGB = '255, 215, 0';
-    var isTouch = false;
-    var zOff = Math.random() * 1000;
-    var seed = Math.random() * 1e6;
+    let targetBg = [20, 20, 20];
+    let targetAccent = [255, 215, 0];
+    let currentBg = [20, 20, 20];
+    let currentAccent = [255, 215, 0];
+    let zOff = Math.random() * 1000;
+
+    function parseRGB(str) {
+        var parts = str.split(',').map(function(s) { return parseInt(s.trim(), 10); });
+        return [parts[0] || 0, parts[1] || 0, parts[2] || 0];
+    }
 
     function getAccent() {
         var v = getComputedStyle(document.documentElement).getPropertyValue('--accent-rgb').trim();
-        return v || accentRGB;
+        return parseRGB(v || '255, 215, 0');
     }
 
     function getBackground() {
         var v = getComputedStyle(document.documentElement).getPropertyValue('--background-rgb').trim();
-        return v || bgRGB;
+        return parseRGB(v || '20, 20, 20');
+    }
+
+    function lerp(a, b, t) {
+        return a + (b - a) * t;
+    }
+
+    function lerpColor(current, target, t) {
+        return [
+            Math.round(lerp(current[0], target[0], t)),
+            Math.round(lerp(current[1], target[1], t)),
+            Math.round(lerp(current[2], target[2], t))
+        ];
     }
 
     function resize() {
@@ -39,33 +57,59 @@
         canvas.style.height = height + 'px';
     }
 
-    // Simple hash-based value noise
-    function hash(x, y) {
-        var h = (x * 374761393 + y * 668265263 + seed) | 0;
-        h = (h ^ (h << 13)) >>> 0;
-        return ((h * 1274126177) >>> 0) / 4294967296;
+    // Simplex 2D noise
+    var perm = new Uint8Array(512);
+    var p = new Uint8Array(256);
+    for (var i = 0; i < 256; i++) p[i] = i;
+    for (var i = 255; i > 0; i--) {
+        var j = Math.floor(Math.random() * (i + 1));
+        var tmp = p[i]; p[i] = p[j]; p[j] = tmp;
+    }
+    for (var i = 0; i < 512; i++) perm[i] = p[i & 255];
+
+    function noise2D(x, y) {
+        var F2 = 0.5 * (Math.sqrt(3) - 1);
+        var G2 = (3 - Math.sqrt(3)) / 6;
+        var s = (x + y) * F2;
+        var i = Math.floor(x + s);
+        var j = Math.floor(y + s);
+        var t = (i + j) * G2;
+        var X0 = i - t;
+        var Y0 = j - t;
+        var x0 = x - X0;
+        var y0 = y - Y0;
+        var i1, j1;
+        if (x0 > y0) { i1 = 1; j1 = 0; }
+        else { i1 = 0; j1 = 1; }
+        var x1 = x0 - i1 + G2;
+        var y1 = y0 - j1 + G2;
+        var x2 = x0 - 1 + 2 * G2;
+        var y2 = y0 - 1 + 2 * G2;
+        var ii = i & 255;
+        var jj = j & 255;
+        function grad(hash, x, y) {
+            var h = hash & 7;
+            var u = h < 4 ? x : y;
+            var v = h < 4 ? y : x;
+            return ((h & 1) ? -u : u) + ((h & 2) ? -2 * v : 2 * v);
+        }
+        var t0 = 0.5 - x0 * x0 - y0 * y0;
+        var n0 = t0 < 0 ? 0 : (t0 *= t0, t0 * t0 * grad(perm[ii + perm[jj]], x0, y0));
+        var t1 = 0.5 - x1 * x1 - y1 * y1;
+        var n1 = t1 < 0 ? 0 : (t1 *= t1, t1 * t1 * grad(perm[ii + i1 + perm[jj + j1]], x1, y1));
+        var t2 = 0.5 - x2 * x2 - y2 * y2;
+        var n2 = t2 < 0 ? 0 : (t2 *= t2, t2 * t2 * grad(perm[ii + 1 + perm[jj + 1]], x2, y2));
+        return 70 * (n0 + n1 + n2);
     }
 
-    function valueNoise(x, y) {
-        var x0 = Math.floor(x);
-        var y0 = Math.floor(y);
-        var xf = x - x0;
-        var yf = y - y0;
-
-        var a = hash(x0, y0);
-        var b = hash(x0 + 1, y0);
-        var c = hash(x0, y0 + 1);
-        var d = hash(x0 + 1, y0 + 1);
-
-        var u = xf * xf * (3 - 2 * xf);
-        var v = yf * yf * (3 - 2 * yf);
-
-        return a * (1 - u) * (1 - v) + b * u * (1 - v) + c * (1 - u) * v + d * u * v;
-    }
-
-    // Number of particles proportional to screen area
     function particleCount() {
-        return Math.min(Math.floor((width * height) / 4000), 600);
+        return Math.min(Math.floor((width * height) / 5000), 500);
+    }
+
+    function wrap(val, max) {
+        if (val < 0) return val + max;
+        if (val > max) return val - max;
+        return val;
     }
 
     var particles = [];
@@ -77,8 +121,7 @@
             particles.push({
                 x: Math.random() * width,
                 y: Math.random() * height,
-                life: Math.floor(Math.random() * 600),
-                max: 300 + Math.floor(Math.random() * 600)
+                vx: 0, vy: 0
             });
         }
     }
@@ -86,78 +129,91 @@
     function draw() {
         rafId = requestAnimationFrame(draw);
 
+        currentBg = lerpColor(currentBg, targetBg, 0.1);
+        currentAccent = lerpColor(currentAccent, targetAccent, 0.1);
+
         ctx.save();
         ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
 
-        // Fade old trails with background color
-        ctx.globalAlpha = 0.025;
-        ctx.fillStyle = 'rgb(' + bgRGB + ')';
+        // Fade trails: old color gradually replaced by background
+        // 0.035 = trails last ~30 frames (~0.5s at 60fps)
+        ctx.fillStyle = 'rgba(' + currentBg[0] + ',' + currentBg[1] + ',' + currentBg[2] + ',0.035)';
         ctx.fillRect(0, 0, width, height);
-        ctx.globalAlpha = 1;
 
-        var speed = 0.7;
-        var scale = 0.0022;
+        var speed = 1.1;
+        var scale = 0.003;
+        var mouseRadius = 180;
+        var orbitStrength = 2.0;
+        var attractStrength = 0.25;
+        var ac = currentAccent[0] + ',' + currentAccent[1] + ',' + currentAccent[2];
+
+        ctx.strokeStyle = 'rgba(' + ac + ',0.4)';
+        ctx.lineWidth = 1.4;
+        ctx.lineCap = 'round';
 
         for (var i = 0; i < particles.length; i++) {
             var p = particles[i];
+            var prevX = p.x;
+            var prevY = p.y;
 
-            // Sample flow direction from noise field
-            var nx = p.x * scale + zOff;
-            var ny = p.y * scale + zOff;
-            var n = valueNoise(nx, ny);
+            // Flow field angle from simplex noise
+            var n = noise2D(p.x * scale + zOff * 0.25, p.y * scale + zOff * 0.25);
+            var angle = (n + 1) * Math.PI;
+            var fx = Math.cos(angle) * speed;
+            var fy = Math.sin(angle) * speed;
 
-            // Mouse perturbation
+            // Mouse orbit interaction
             var dx = p.x - mouseX;
             var dy = p.y - mouseY;
             var dist = Math.sqrt(dx * dx + dy * dy);
-            if (dist < 200 && dist > 0) {
-                n += (0.3 * (1 - dist / 200)) * Math.sin(dist * 0.05 + zOff * 2);
+            if (dist < mouseRadius && dist > 3) {
+                var normX = dx / dist;
+                var normY = dy / dist;
+                var tanX = -normY;
+                var tanY = normX;
+                var infl = 1 - dist / mouseRadius;
+                p.vx += (tanX * orbitStrength + normX * -attractStrength) * infl;
+                p.vy += (tanY * orbitStrength + normY * -attractStrength) * infl;
             }
 
-            var angle = n * Math.PI * 2 * 1.5;
-            var vx = Math.cos(angle) * speed;
-            var vy = Math.sin(angle) * speed;
+            p.vx += (fx - p.vx) * 0.08;
+            p.vy += (fy - p.vy) * 0.08;
 
-            // Draw line segment
-            var x2 = p.x + vx;
-            var y2 = p.y + vy;
+            var vel = Math.sqrt(p.vx * p.vx + p.vy * p.vy);
+            if (vel > speed * 2.5) {
+                p.vx = (p.vx / vel) * speed * 2.5;
+                p.vy = (p.vy / vel) * speed * 2.5;
+            }
 
-            var lifeRatio = p.life / p.max;
-            var fadeIn = Math.min(lifeRatio * 4, 1);
-            var fadeOut = Math.min((1 - lifeRatio) * 3, 1);
-            var alpha = fadeIn * fadeOut * 0.7;
+            p.x += p.vx;
+            p.y += p.vy;
 
-            ctx.beginPath();
-            ctx.moveTo(p.x, p.y);
-            ctx.lineTo(x2, y2);
-            ctx.strokeStyle = 'rgba(' + accentRGB + ',' + alpha.toFixed(3) + ')';
-            ctx.lineWidth = 1.2;
-            ctx.stroke();
+            // Wrap around edges so particles never vanish
+            p.x = wrap(p.x, width);
+            p.y = wrap(p.y, height);
 
-            p.x = x2;
-            p.y = y2;
-            p.life++;
-
-            // Respawn if out of bounds or end of life
-            if (p.x < -50 || p.x > width + 50 || p.y < -50 || p.y > height + 50 || p.life > p.max) {
-                p.x = Math.random() * width;
-                p.y = Math.random() * height;
-                p.life = 0;
-                p.max = 300 + Math.floor(Math.random() * 600);
+            // Only draw if not wrapped this frame (prevents screen-crossing lines)
+            var wrapDist = Math.abs(p.x - prevX) + Math.abs(p.y - prevY);
+            if (wrapDist < width * 0.3) {
+                ctx.beginPath();
+                ctx.moveTo(prevX, prevY);
+                ctx.lineTo(p.x, p.y);
+                ctx.stroke();
             }
         }
 
-        zOff += 0.0012;
+        zOff += 0.0006;
         ctx.restore();
     }
 
     function start() {
-        bgRGB = getBackground();
-        accentRGB = getAccent();
+        targetBg = getBackground();
+        targetAccent = getAccent();
+        currentBg = targetBg.slice();
+        currentAccent = targetAccent.slice();
         resize();
-        // Prime canvas with background color so no flicker
         ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
-        ctx.fillStyle = 'rgb(' + bgRGB + ')';
+        ctx.fillStyle = 'rgb(' + currentBg[0] + ',' + currentBg[1] + ',' + currentBg[2] + ')';
         ctx.fillRect(0, 0, width, height);
         initParticles();
         draw();
@@ -167,13 +223,13 @@
 
     window.addEventListener('resize', function() {
         resize();
-        bgRGB = getBackground();
-        accentRGB = getAccent();
-        // Repaint after resize
+        targetBg = getBackground();
+        targetAccent = getAccent();
+        currentBg = targetBg.slice();
+        currentAccent = targetAccent.slice();
         ctx.save();
         ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
-        ctx.globalAlpha = 1;
-        ctx.fillStyle = 'rgb(' + bgRGB + ')';
+        ctx.fillStyle = 'rgb(' + currentBg[0] + ',' + currentBg[1] + ',' + currentBg[2] + ')';
         ctx.fillRect(0, 0, width, height);
         ctx.restore();
         initParticles();
@@ -188,16 +244,15 @@
     document.addEventListener('touchstart', function() { isTouch = true; }, { once: true, passive: true });
 
     var observer = new MutationObserver(function() {
-        bgRGB = getBackground();
-        accentRGB = getAccent();
-        // Flush old trails — repaint canvas with new background
+        targetBg = getBackground();
+        targetAccent = getAccent();
+        // Flush old colored trails with new background
         ctx.save();
         ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
         ctx.globalAlpha = 1;
-        ctx.fillStyle = 'rgb(' + bgRGB + ')';
+        ctx.fillStyle = 'rgb(' + targetBg[0] + ',' + targetBg[1] + ',' + targetBg[2] + ')';
         ctx.fillRect(0, 0, width, height);
         ctx.restore();
-        initParticles();
     });
     observer.observe(document.documentElement, { attributes: true, attributeFilter: ['style'] });
 

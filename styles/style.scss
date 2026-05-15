@@ -9,6 +9,7 @@
 
 html {
   scroll-behavior: smooth;
+  background-color: var(--background);
 }
 
 :root {
@@ -23,7 +24,7 @@ html {
 
 body {
   line-height: 1.75;
-  background-color: var(--background);
+  background-color: transparent;
   color: var(--text);
   font-size: 17px;
   padding-top: 40px;
