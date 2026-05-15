@@ -113,6 +113,7 @@
     }
 
     var particles = [];
+    var frameCount = 0;
 
     function initParticles() {
         particles = [];
@@ -135,10 +136,17 @@
         ctx.save();
         ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
 
-        // Fade trails: old color gradually replaced by background
-        // 0.035 = trails last ~30 frames (~0.5s at 60fps)
-        ctx.fillStyle = 'rgba(' + currentBg[0] + ',' + currentBg[1] + ',' + currentBg[2] + ',0.035)';
-        ctx.fillRect(0, 0, width, height);
+        // Periodic full clear to prevent residue buildup
+        frameCount++;
+        if (frameCount % 480 === 0) {
+            ctx.globalAlpha = 1;
+            ctx.fillStyle = 'rgb(' + currentBg[0] + ',' + currentBg[1] + ',' + currentBg[2] + ')';
+            ctx.fillRect(0, 0, width, height);
+        } else {
+            // Normal fade: old color gradually replaced by background
+            ctx.fillStyle = 'rgba(' + currentBg[0] + ',' + currentBg[1] + ',' + currentBg[2] + ',0.035)';
+            ctx.fillRect(0, 0, width, height);
+        }
 
         var speed = 1.1;
         var scale = 0.003;
