@@ -103,6 +103,7 @@
     }
 
     var particles = [];
+    var lastFrameTime;
 
     function particleCount() {
         return Math.min(Math.floor((width * height) / 5200), 460);
@@ -139,8 +140,16 @@
         return Math.max(min, Math.min(max, val));
     }
 
-    function draw() {
+    function draw(timestamp) {
         rafId = requestAnimationFrame(draw);
+
+        var dt = 1;
+        if (typeof timestamp === 'number') {
+            if (typeof lastFrameTime === 'number') {
+                dt = clamp((timestamp - lastFrameTime) / 16.67, 0.5, 1.8);
+            }
+            lastFrameTime = timestamp;
+        }
 
         currentBg = lerpColor(currentBg, targetBg, 0.1);
         currentAccent = lerpColor(currentAccent, targetAccent, 0.1);
@@ -149,7 +158,7 @@
         paintBackground(currentBg);
 
         var driftScale = 0.004;
-        var driftRange = Math.min(32, Math.max(14, Math.min(width, height) * 0.035));
+        var driftRange = Math.min(20, Math.max(14, Math.min(width, height) * 0.035));
         var mouseRadius = 180;
         var mousePush = 1.2;
         var mouseOrbit = 0.45;
@@ -165,8 +174,8 @@
             var targetX = clamp(p.anchorX + driftX, 0, width);
             var targetY = clamp(p.anchorY + driftY, 0, height);
 
-            p.vx += (targetX - p.x) * 0.012;
-            p.vy += (targetY - p.y) * 0.012;
+            p.vx += (targetX - p.x) * 0.012 * dt;
+            p.vy += (targetY - p.y) * 0.012 * dt;
 
             var dx = p.x - mouseX;
             var dy = p.y - mouseY;
@@ -177,20 +186,20 @@
                 var tanX = -normY;
                 var tanY = normX;
                 var infl = 1 - dist / mouseRadius;
-                p.vx += (normX * mousePush + tanX * mouseOrbit) * infl;
-                p.vy += (normY * mousePush + tanY * mouseOrbit) * infl;
+                p.vx += (normX * mousePush + tanX * mouseOrbit) * infl * dt;
+                p.vy += (normY * mousePush + tanY * mouseOrbit) * infl * dt;
             }
 
-            p.vx *= 0.9;
-            p.vy *= 0.9;
+            p.vx *= Math.pow(0.9, dt);
+            p.vy *= Math.pow(0.9, dt);
             var vel = Math.sqrt(p.vx * p.vx + p.vy * p.vy);
             if (vel > 3.2) {
                 p.vx = (p.vx / vel) * 3.2;
                 p.vy = (p.vy / vel) * 3.2;
             }
 
-            p.x += p.vx;
-            p.y += p.vy;
+            p.x += p.vx * dt;
+            p.y += p.vy * dt;
             p.x = clamp(p.x, 0, width);
             p.y = clamp(p.y, 0, height);
 
@@ -200,7 +209,7 @@
             ctx.fill();
         }
 
-        zOff += 0.003;
+        zOff += 0.003 * dt;
     }
 
     function start() {
@@ -209,6 +218,7 @@
         currentBg = targetBg.slice();
         currentAccent = targetAccent.slice();
         resize();
+        lastFrameTime = undefined;
         ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
         paintBackground(currentBg);
         initParticles();
@@ -223,6 +233,7 @@
         targetAccent = getAccent();
         currentBg = targetBg.slice();
         currentAccent = targetAccent.slice();
+        lastFrameTime = undefined;
         ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
         paintBackground(currentBg);
         initParticles();
