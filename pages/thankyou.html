@@ -21,12 +21,21 @@
     <title>Thank you for your message! - ahamSel</title>
     <script defer src="../scripts/themes.js"></script>
   </head>
-  <body style="margin: 0; padding: 0">
-    <div class="success" align="center">
-      <h1>Thank you.</h1>
-      <p>Your message was sent. If you requested the resume, I can follow up by email.</p>
-      <a href="./contact">Go Back</a>
-    </div>
+  <body class="no-nav-page">
+    <main class="success">
+      <section class="success-card">
+        <p class="eyebrow">Message sent</p>
+        <h1>Thank you.</h1>
+        <p>
+          Your message was sent. If you requested the resume, I can follow up
+          by email.
+        </p>
+        <div class="hero-actions">
+          <a class="button-link primary" href="./contact">Back to contact</a>
+          <a class="button-link" href="./about">About page</a>
+        </div>
+      </section>
+    </main>
 
     <div class="theme-toggle">
       <button class="theme-toggle-btn" onclick="toggleThemeMenu()" aria-label="Toggle theme menu" aria-expanded="false">
