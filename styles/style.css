@@ -426,7 +426,7 @@ video {
 
 .projects-footer p:not(.eyebrow) {
   max-width: 720px;
-  margin: 0 0 24px;
+  margin: 0;
 }
 
 @media screen and (max-width: 900px) {
