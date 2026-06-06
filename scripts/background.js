@@ -212,6 +212,18 @@
         zOff += 0.003 * dt;
     }
 
+    function pauseAnimation() {
+        if (!rafId) return;
+        cancelAnimationFrame(rafId);
+        rafId = null;
+    }
+
+    function resumeAnimation() {
+        if (rafId) return;
+        lastFrameTime = undefined;
+        rafId = requestAnimationFrame(draw);
+    }
+
     function start() {
         targetBg = getBackground();
         targetAccent = getAccent();
@@ -257,7 +269,6 @@
     });
     observer.observe(document.documentElement, { attributes: true, attributeFilter: ['style'] });
 
-    window.addEventListener('beforeunload', function() {
-        if (rafId) cancelAnimationFrame(rafId);
-    });
+    window.addEventListener('pagehide', pauseAnimation);
+    window.addEventListener('pageshow', resumeAnimation);
 })();
