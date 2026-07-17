@@ -1,5 +1,16 @@
 const featuredProjects = [
   {
+    title: "Canrag",
+    stack: "Python, TypeScript, FastAPI, AWS, Gemini, PostgreSQL, pgvector",
+    summary:
+      "A multilingual and multimodal document-intelligence application that ingests PDFs, Office files, spreadsheets, EPUBs, emails, and images, then answers questions with citations linked to the supporting passage, table, visual, or cell range.",
+    impact:
+      "Built end to end on AWS with asynchronous processing, Gemini embeddings and synthesis, hybrid pgvector retrieval, multilingual multi-turn conversations, interactive source viewers, and automated evaluation.",
+    link: "https://canrag.ahamsel.com",
+    linkLabel: "Try Canrag",
+    image: "../assets/images/canrag_logo.svg"
+  },
+  {
     title: "WebPilot",
     stack: "TypeScript, Electron, Playwright MCP, LLM APIs, Ollama",
     summary:
