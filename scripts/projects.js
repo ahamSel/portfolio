@@ -8,7 +8,13 @@ const featuredProjects = [
       "Built end to end on AWS with asynchronous processing, Gemini embeddings and synthesis, hybrid pgvector retrieval, multilingual multi-turn conversations, interactive source viewers, and automated evaluation.",
     link: "https://canrag.ahamsel.com",
     linkLabel: "Try Canrag",
-    image: "../assets/images/canrag_logo.svg"
+    videoPoster: "../assets/images/canrag_poster.jpg",
+    videoSources: [
+      { src: "../assets/videos/canrag.webm", type: "video/webm" },
+      { src: "../assets/videos/canrag.mp4", type: "video/mp4" }
+    ],
+    videoWidth: 1600,
+    videoHeight: 1004
   },
   {
     title: "WebPilot",
@@ -262,6 +268,8 @@ function openVideoLightbox(project) {
   video.setAttribute("loop", "");
   video.setAttribute("playsinline", "");
   video.setAttribute("controls", "");
+  video.setAttribute("poster", project.videoPoster);
+  video.muted = true;
   if (project.videoWidth && project.videoHeight) {
     video.width = project.videoWidth;
     video.height = project.videoHeight;
@@ -277,6 +285,8 @@ function openVideoLightbox(project) {
   overlay.appendChild(closeBtn);
   overlay.appendChild(video);
   document.body.appendChild(overlay);
+  video.load();
+  video.play().catch((error) => console.error("Autoplay failed", error));
 
   requestAnimationFrame(function () {
     overlay.classList.add("active");
