@@ -82,8 +82,8 @@ const featuredProjects = [
     title: "Flutter Chat",
     stack: "Dart, Flutter, Firebase, FCM",
     summary:
-      "A real-time mobile chat app with Firestore-backed messaging, Google sign-in authentication, and push notifications delivered through Firebase Cloud Messaging.",
-    impact: "End-to-end messaging experience demonstrating realtime data sync, push notification delivery, and graceful handling of deleted accounts.",
+      "A real-time mobile chat app with anonymous Firebase Authentication, Firestore-backed messaging, unique username selection, and push notifications delivered through Firebase Cloud Messaging.",
+    impact: "End-to-end messaging experience demonstrating realtime data sync, transaction-coordinated username availability checks, push notification delivery, and graceful handling of deleted accounts.",
     link: "https://github.com/ahamSel/flutter_chat_app",
     linkLabel: "View repo",
     videoPoster: "../assets/images/chat_poster.jpg",
