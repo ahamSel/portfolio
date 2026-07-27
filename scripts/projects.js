@@ -49,6 +49,7 @@ const featuredProjects = [
     videoWidth: 1180,
     videoHeight: 2556
   },
+  /*
   {
     title: "PropertyCopy AI",
     stack: "Flutter, Firebase, Vertex AI",
@@ -76,6 +77,7 @@ const featuredProjects = [
     videoWidth: 1440,
     videoHeight: 1080
   },
+  */
   {
     title: "Flutter Chat",
     stack: "Dart, Flutter, Firebase, FCM",
