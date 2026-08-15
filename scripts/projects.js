@@ -60,8 +60,6 @@ const featuredProjects = [
       "A procedural horror-maze prototype where the player recovers ritual candles while a spectral entity patrols, investigates light, hunts, and retreats under flashlight pressure.",
     impact:
       "Combines runtime maze generation, Jump Point Search pathfinding, behaviour-tree decisions, wall collision avoidance, and steering-based evasion in one playable simulation.",
-    link: "https://github.com/ahamSel/comp4303-project",
-    linkLabel: "View repo",
     image: "../assets/images/echoes-in-the-walls-poster.png",
     imageClass: "media-wide",
     cardClass: "project-card-wide-media"
@@ -170,12 +168,15 @@ featuredProjects.forEach((project) => {
 
   const content = document.createElement("div");
   content.classList.add("project-content");
+  const projectLink = project.link
+    ? `<a class="button-link" href="${project.link}" target="_blank" rel="noopener">${project.linkLabel}</a>`
+    : "";
   content.innerHTML = `
     <p class="eyebrow">${project.stack}</p>
     <h2>${project.title}</h2>
     <p>${project.summary}</p>
     <p class="project-impact">${project.impact}</p>
-    <a class="button-link" href="${project.link}" target="_blank" rel="noopener">${project.linkLabel}</a>
+    ${projectLink}
   `;
 
   projectItem.appendChild(content);
