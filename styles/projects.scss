@@ -17,6 +17,10 @@
   box-shadow: 0 20px 60px rgba(0, 0, 0, 0.22);
 }
 
+.project-card.project-card-wide-media {
+  grid-template-columns: minmax(0, 0.8fr) minmax(420px, 1.2fr);
+}
+
 .project-card h2 {
   margin: 0 0 16px;
   font-size: clamp(28px, 4vw, 46px);
@@ -47,6 +51,11 @@
   border-radius: 24px;
   object-fit: contain;
   box-shadow: 0 0 28px rgba(var(--accent-rgb), 0.22);
+}
+
+.project-media img.media-wide {
+  max-width: 100%;
+  max-height: none;
 }
 
 .project-media img.media-phone {
@@ -138,7 +147,8 @@ video {
 }
 
 @media screen and (max-width: 900px) {
-  .project-card {
+  .project-card,
+  .project-card.project-card-wide-media {
     grid-template-columns: 1fr;
   }
 

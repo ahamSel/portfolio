@@ -62,7 +62,9 @@ const featuredProjects = [
       "Combines runtime maze generation, Jump Point Search pathfinding, behaviour-tree decisions, wall collision avoidance, and steering-based evasion in one playable simulation.",
     link: "https://github.com/ahamSel/comp4303-project",
     linkLabel: "View repo",
-    image: "../assets/images/echoes-in-the-walls-poster.png"
+    image: "../assets/images/echoes-in-the-walls-poster.png",
+    imageClass: "media-wide",
+    cardClass: "project-card-wide-media"
   },
   /*
   {
@@ -149,6 +151,7 @@ const archiveContainer = document.querySelector(".archive-projects");
 featuredProjects.forEach((project) => {
   const projectItem = document.createElement("article");
   projectItem.classList.add("project-card");
+  if (project.cardClass) projectItem.classList.add(project.cardClass);
   projectItem.id = project.slug;
 
   const media = document.createElement("div");
