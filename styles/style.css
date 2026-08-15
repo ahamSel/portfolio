@@ -299,6 +299,7 @@ nav a:focus {
 }
 
 .project-card {
+  scroll-margin-top: 72px;
   display: grid;
   grid-template-columns: minmax(0, 1.1fr) minmax(260px, 0.9fr);
   gap: 28px;
@@ -384,6 +385,7 @@ video {
 }
 
 .archive-item {
+  scroll-margin-top: 72px;
   display: block;
   border: 1px solid var(--text);
   border-radius: 16px;

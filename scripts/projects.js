@@ -1,5 +1,6 @@
 const featuredProjects = [
   {
+    slug: "canrag",
     title: "Canrag",
     stack: "Python, TypeScript, FastAPI, AWS, Gemini, PostgreSQL, pgvector",
     summary:
@@ -17,6 +18,7 @@ const featuredProjects = [
     videoHeight: 1004
   },
   {
+    slug: "webpilot",
     title: "WebPilot",
     stack: "TypeScript, Electron, Playwright MCP, LLM APIs, Ollama",
     summary:
@@ -33,6 +35,7 @@ const featuredProjects = [
     videoHeight: 1134
   },
   {
+    slug: "busboard-nl",
     title: "BusBoard NL",
     stack: "Dart, Flutter, GTFS, realtime transit data",
     summary:
@@ -48,6 +51,18 @@ const featuredProjects = [
     ],
     videoWidth: 1180,
     videoHeight: 2556
+  },
+  {
+    slug: "echoes-in-the-walls",
+    title: "Echoes in the Walls",
+    stack: "JavaScript, Three.js, JPS, Behaviour Trees, PCG",
+    summary:
+      "A procedural horror-maze prototype where the player recovers ritual candles while a spectral entity patrols, investigates light, hunts, and retreats under flashlight pressure.",
+    impact:
+      "Combines runtime maze generation, Jump Point Search pathfinding, behaviour-tree decisions, wall collision avoidance, and steering-based evasion in one playable simulation.",
+    link: "https://github.com/ahamSel/comp4303-project",
+    linkLabel: "View repo",
+    image: "../assets/images/echoes-in-the-walls-poster.png"
   },
   /*
   {
@@ -79,6 +94,7 @@ const featuredProjects = [
   },
   */
   {
+    slug: "flutter-chat",
     title: "Flutter Chat",
     stack: "Dart, Flutter, Firebase, FCM",
     summary:
@@ -98,24 +114,28 @@ const featuredProjects = [
 
 const earlierProjects = [
   {
+    slug: "authentication-and-data-patterns",
     title: "Authentication and Data Patterns",
     description:
       "A focused implementation of app authentication flows, Google sign-in, account linking, email verification, password reset, and realtime database-backed profile updates.",
     link: "https://github.com/ahamSel/flutter_firebase_login_signup"
   },
   {
+    slug: "world-times",
     title: "World Times",
     description:
       "Flutter learning project for regional time lookup, search, and API-backed UI state.",
     link: "https://github.com/ahamSel/world_time_fapp"
   },
   {
+    slug: "game-without-art",
     title: "Game Without Art",
     description:
       "Unity arcade prototype from an earlier game-development learning phase.",
     link: "https://github.com/ahamSel/Lockdown"
   },
   {
+    slug: "dotdodge",
     title: "DotDodge",
     description:
       "Unity Android game prototype focused on homing-object movement and difficulty progression.",
@@ -129,6 +149,7 @@ const archiveContainer = document.querySelector(".archive-projects");
 featuredProjects.forEach((project) => {
   const projectItem = document.createElement("article");
   projectItem.classList.add("project-card");
+  projectItem.id = project.slug;
 
   const media = document.createElement("div");
   media.classList.add("project-media");
@@ -176,6 +197,7 @@ const archiveGrid = archiveContainer.querySelector(".archive-grid");
 earlierProjects.forEach((project) => {
   const item = document.createElement("a");
   item.classList.add("archive-item");
+  item.id = project.slug;
   item.href = project.link;
   item.target = "_blank";
   item.rel = "noopener";
@@ -185,6 +207,17 @@ earlierProjects.forEach((project) => {
   `;
   archiveGrid.appendChild(item);
 });
+
+function scrollToHashTarget() {
+  const targetId = decodeURIComponent(window.location.hash.slice(1));
+  if (!targetId) return;
+
+  const target = document.getElementById(targetId);
+  if (target) target.scrollIntoView();
+}
+
+requestAnimationFrame(scrollToHashTarget);
+window.addEventListener("hashchange", scrollToHashTarget);
 
 function appendVideoToElement(element, project) {
   const video = document.createElement("video");
