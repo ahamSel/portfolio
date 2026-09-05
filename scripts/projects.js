@@ -62,8 +62,13 @@ const featuredProjects = [
       "A pair project with Rohan Prakash Patil. My work focused on game-AI and gameplay integration, including behaviour-tree decisions, steering, player systems, and runtime debugging.",
     link: "/games/echoes-in-the-walls/",
     linkLabel: "Play",
-    image: "../assets/images/echoes-in-the-walls-poster.png",
-    imageClass: "media-wide",
+    videoPoster: "../assets/images/echoes-in-the-walls-poster.png?v=20260905-gameplay",
+    videoSources: [
+      { src: "../assets/videos/echoes-gameplay.webm", type: "video/webm" },
+      { src: "../assets/videos/echoes-gameplay.mp4", type: "video/mp4" }
+    ],
+    videoWidth: 1600,
+    videoHeight: 900,
     cardClass: "project-card-wide-media"
   },
   /*
