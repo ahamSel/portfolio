@@ -64,8 +64,8 @@ const featuredProjects = [
     linkLabel: "Play",
     videoPoster: "../assets/images/echoes-in-the-walls-poster.png?v=20260905-gameplay",
     videoSources: [
-      { src: "../assets/videos/echoes-gameplay.webm", type: "video/webm" },
-      { src: "../assets/videos/echoes-gameplay.mp4", type: "video/mp4" }
+      { src: "../assets/videos/echoes-showcase.webm", type: "video/webm" },
+      { src: "../assets/videos/echoes-showcase.mp4", type: "video/mp4" }
     ],
     videoWidth: 1600,
     videoHeight: 900,
