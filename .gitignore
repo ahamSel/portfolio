@@ -3,6 +3,7 @@
 
 *.css
 !styles/style.css
+!games/echoes-in-the-walls/assets/*.css
 
 .vscode/
 

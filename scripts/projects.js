@@ -59,7 +59,9 @@ const featuredProjects = [
     summary:
       "A procedural horror-maze prototype where the player recovers ritual candles while a spectral entity patrols, investigates light, hunts, and retreats under flashlight pressure.",
     impact:
-      "Combines runtime maze generation, Jump Point Search pathfinding, behaviour-tree decisions, wall collision avoidance, and steering-based evasion in one playable simulation.",
+      "A pair project with Rohan Prakash Patil. My work focused on game-AI and gameplay integration, including behaviour-tree decisions, steering, player systems, and runtime debugging.",
+    link: "/games/echoes-in-the-walls/",
+    linkLabel: "Play",
     image: "../assets/images/echoes-in-the-walls-poster.png",
     imageClass: "media-wide",
     cardClass: "project-card-wide-media"

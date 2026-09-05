@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <meta name="description" content="Play Echoes in the Walls, a procedural horror-maze game by Ahmed Amine Es-Selmouni and Rohan Prakash Patil.">
+    <meta name="theme-color" content="#10141b">
+    <link rel="icon" href="data:,">
+    <title>Echoes in the Walls</title>
+    <script type="module" crossorigin src="./assets/index-4MU2zBXE.js"></script>
+    <link rel="modulepreload" crossorigin href="./assets/three-B3zZcyVh.js">
+    <link rel="stylesheet" crossorigin href="./assets/index-Bh5dd84t.css">
+  </head>
+  <body>
+    <header class="game-header">
+      <a class="icon-button" href="/pages/projects.html#echoes-in-the-walls" aria-label="Back to portfolio" title="Back to portfolio"><i data-lucide="arrow-left"></i></a>
+      <h1>Echoes in the Walls</h1>
+    </header>
+    <div id="hud" aria-label="Game status"></div>
+    <div class="game-actions" role="group" aria-label="Game controls">
+      <button class="icon-button" id="pause" type="button" aria-label="Pause" title="Pause"><i data-lucide="pause"></i></button>
+      <button class="icon-button" id="restart" type="button" aria-label="New run" title="New run"><i data-lucide="rotate-ccw"></i></button>
+      <button class="icon-button" id="light" type="button" aria-label="Flashlight" title="Flashlight" aria-pressed="false"><i data-lucide="flashlight"></i></button>
+      <button class="icon-button" id="path-debug" type="button" aria-label="Show path" title="Show path" aria-pressed="false"><i data-lucide="route"></i></button>
+      <button class="icon-button" id="fullscreen" type="button" aria-label="Full screen" title="Full screen"><i data-lucide="maximize"></i></button>
+    </div>
+    <div class="touch-movement" role="group" aria-label="Movement">
+      <button class="icon-button move-up" data-move-key="w" type="button" aria-label="Move up" title="Move up"><i data-lucide="arrow-up"></i></button>
+      <button class="icon-button move-left" data-move-key="a" type="button" aria-label="Move left" title="Move left"><i data-lucide="arrow-left"></i></button>
+      <button class="icon-button move-down" data-move-key="s" type="button" aria-label="Move down" title="Move down"><i data-lucide="arrow-down"></i></button>
+      <button class="icon-button move-right" data-move-key="d" type="button" aria-label="Move right" title="Move right"><i data-lucide="arrow-right"></i></button>
+    </div>
+    <p id="pause-status" role="status" hidden>Paused</p>
+    <p id="load-error" role="alert" hidden>The game could not start. WebGL 2 is required; try an up-to-date browser with hardware acceleration enabled.</p>
+    <footer class="game-credits">Ahmed Amine Es-Selmouni &amp; Rohan Prakash Patil <span aria-hidden="true">|</span> <a href="./THIRD_PARTY_NOTICES.txt" target="_blank" rel="noopener">Credits</a></footer>
+    <noscript>This game requires JavaScript.</noscript>
+  </body>
+</html>
